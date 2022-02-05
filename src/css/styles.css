@@ -63,13 +63,31 @@ body, html {
   justify-content: space-evenly;
   margin-top: 20px;
   border: 2px solid blue;
+  padding: 20px 0px 20px 0px;
 }
 
-.activity-card,
-.hydration-card,
-.sleep-card,
-.user-card {
+.card {
   display: flex;
   width: 20vw;
-  border: 2px solid blue;
+  border: 2px solid hotpink;
+  border-radius: 15px;
+}
+
+.activity-card {
+  background-color: antiquewhite;
+}
+.hydration-card {
+  background-color: coral;
+}
+
+.sleep-card {
+  background-color: blueviolet;
+}
+
+.user-card {
+  background-color: #e91e63;
+}
+
+.card-image {
+  
 }
