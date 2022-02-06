@@ -39,4 +39,16 @@ describe("User", () => {
   it("should be an instance of userRepository", () => {
     expect(user1).to.be.an.instanceOf(User);
   });
+
+  // it("should store a users data", () => {
+  //   expect(user1.data).to.equal(userData1)
+  // })
+
+  it('should take in the users id', () => {
+    expect(user1.id).to.equal(userData1.id)
+    expect(user1.id).to.equal(1)
+    expect(user2.id).to.equal(userData2.id)
+    expect(user2.id).to.equal(2)
+  })
+
 });
