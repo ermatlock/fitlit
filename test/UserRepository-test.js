@@ -2,10 +2,10 @@ import { expect } from 'chai';
 import UserRepository from '../src/UserRepository';
 
 describe('User Repository', () => {
-let userRepository
+let userRepository1
 
   beforeEach( () => {
-    userRepository = new UserRepository()
+    userRepository1 = new UserRepository()
   })
 
   it('should be a function', function () {
@@ -13,6 +13,10 @@ let userRepository
   });
 
   it('should be an instance of userRepository', () => {
-    expect(userRepository).to.be.an.instanceOf(UserRepository)
+    expect(userRepository1).to.be.an.instanceOf(UserRepository)
+  })
+
+  it('should accept user data', () => {
+    expect(userRepository.data).to.equal()
   })
 });
