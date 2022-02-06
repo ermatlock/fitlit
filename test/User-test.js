@@ -94,4 +94,9 @@ describe("User", () => {
     expect(user2.friends).to.eql(userData2.friends);
     expect(user2.friends).to.eql([9, 18, 24, 19]);
   });
+
+  it("should return the users first name", () => {
+    expect(user1.getFirstName()).to.equal("Luisa")
+    expect(user1.getFirstName()).to.equal("Jarvis")
+  });
 });
