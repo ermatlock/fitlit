@@ -96,7 +96,7 @@ describe("User", () => {
   });
 
   it("should return the users first name", () => {
-    expect(user1.getFirstName()).to.equal("Luisa")
-    expect(user1.getFirstName()).to.equal("Jarvis")
+    expect(user1.getFirstName()).to.equal("Luisa");
+    expect(user2.getFirstName()).to.equal("Jarvis");
   });
 });
