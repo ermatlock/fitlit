@@ -51,4 +51,11 @@ describe("User", () => {
     expect(user2.id).to.equal(2)
   })
 
+  it('should take in the users name', () => {
+    expect(user1.name).to.equal(userData1.name)
+    expect(user1.name).to.equal("Luisa Hane")
+    expect(user2.name).to.equal(userData2.name)
+    expect(user2.name).to.equal("Jarvis Considine")
+  })
+
 });
