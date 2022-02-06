@@ -72,4 +72,8 @@ let user1, user2
     let user1 = new User(userDataSet[0])
     expect(userRepository1.returnUserData(1)).to.eql(user1)
   })
+
+  it('should calculate and return average step goal amongst all users', () => {
+    expect(userRepository1.returnStepGoal()).to.equal(6667)
+  })
 });
