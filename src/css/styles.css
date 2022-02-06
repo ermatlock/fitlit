@@ -1,5 +1,93 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+
 body, html {
   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
   background-repeat: no-repeat;
   height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  border: 2px solid blue;
+
+}
+
+.rubiks-cube-image {
+  height: 3vh;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  border: 2px solid blue;
+  padding: 20px 0px 20px 0px;
+}
+
+.card {
+  display: flex;
+  width: 20vw;
+  border: 2px solid hotpink;
+  border-radius: 15px;
+}
+
+.activity-card {
+  background-color: antiquewhite;
+}
+.hydration-card {
+  background-color: coral;
+}
+
+.sleep-card {
+  background-color: blueviolet;
+}
+
+.user-card {
+  background-color: #e91e63;
+}
+
+.card-image {
+  
 }
