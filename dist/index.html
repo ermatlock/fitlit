@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
-    <title>Fitlit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../src/css/styles.css">
+    <title> FitLit Activity Tracker</title>
   </head>
-  <body>
-    <h1>Activity Tracker</h1>
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
 
+  <body>
+    <main class="main-container">
+      <nav class="nav-wrapper">
+        <h1>Welcome to FitLit</h1>
+        <img class="rubiks-cube-image" alt="Drop Down Menu" src="../src/images/menu-dots.svg"></img>
+      </nav>
+      <section class="card-wrapper">
+        <article class="card activity-card">
+          <img class="card-image" alt="Activity Image" src="../src/images/sexual-activity.svg"></img>
+        </article>
+        <article class="card hydration-card">
+          <img class="card-image" alt="Water Image" src="../src/images/water.svg"></img>
+        </article>
+        <article class="card sleep-card">
+          <img class="card-image" alt="Sleep Image" src="../src/images/sleep.svg"></img>
+        </article>
+        <article class="card user-card">
+          <img class="card-image" alt="User Image" src="../src/images/sexual-activity.svg"></img>
+        </article>
+      </section>
+    </main>
 <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>
+    <!-- <script type="text/javascript" src="./data/users.js"></script> -->
+
   </body>
 </html>
