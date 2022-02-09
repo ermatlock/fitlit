@@ -11,27 +11,41 @@ import User from "./User";
 let currentUserRepository = new UserRepository(userData);
 let currentUser;
 
+const welcome = document.getElementById("welcome");
 const userName = document.getElementById("userName");
 const userAddress = document.getElementById("userAddress");
 const userEmail = document.getElementById("userEmail");
 const userStrideLength = document.getElementById("userStrideLength");
 const userDailyStep = document.getElementById("userDailyStep");
+const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
+
+const greetUser = () => {
+  welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
+};
 
 const instantiateUser = (id) => {
   console.log(">>>instantiateUser");
   currentUser = currentUserRepository.createUser(id);
 };
 
-const updateUserCard = (id) => {
+const updateUserCard = () => {
   console.log(">>>updateUserCard");
-  instantiateUser(id);
+
   userName.innerText = currentUser.getFirstName();
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
   userStrideLength.innerText = currentUser.strideLength;
-  userDailyStep.innerText = currentUser.dailyStepGoal;
+  compareStepGoal.innerText = `You: ${
+    currentUser.dailyStepGoal
+  }. Average: ${currentUserRepository.returnStepGoal()}.`;
   // userFriends.innerText = currentUser.friends;
 };
 
-window.onload = updateUserCard(5);
+const loader = () => {
+  instantiateUser(5);
+  updateUserCard();
+  greetUser();
+};
+
+window.onload = loader;
