@@ -4,7 +4,7 @@ import "./images/menu-dots.svg";
 import "./images/sexual-activity.svg";
 import "./images/sleep.svg";
 import "./images/water.svg";
-import userData from "./data/users";
+// import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
 import {
