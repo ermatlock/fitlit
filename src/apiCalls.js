@@ -1,5 +1,5 @@
-//FETCH calls
-
+// //FETCH calls
+//
 export const fetchUserData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
   .then((response) => response.json())
@@ -28,7 +28,9 @@ export const fetchHydrationData = () => {
   .catch((error) => console.log(error));
 };
 
-
+export const promiseAll = () => {
+  return Promise.all([fetchUserData(), fetchSleepData(), fetchActivityData(), fetchHydrationData()])
+};
 
 
 //POST request

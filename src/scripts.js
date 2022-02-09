@@ -7,6 +7,7 @@ import "./images/water.svg";
 import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
+import {promiseAll} from "./apiCalls.js";
 
 let currentUserRepository = new UserRepository(userData);
 let currentUser;
@@ -47,5 +48,11 @@ const loader = () => {
   updateUserCard();
   greetUser();
 };
+
+const loadAPIs() => {
+
+}
+
+
 
 window.onload = loader;
