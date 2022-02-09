@@ -1,10 +1,7 @@
 // //FETCH calls
 //
 
-const fetchUserData = () => {
-  return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
-    .then((response) => response.json())
-};
+const fetchUserData = fetch("https://fitlit-api.herokuapp.com/api/v1/users").then((response) => response.json());
 
 const fetchSleepData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/sleep")

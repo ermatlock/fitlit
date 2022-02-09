@@ -33,14 +33,25 @@ const instantiateUserRepository = (data) => {
   currentUserRepository = new UserRepository(data);
 };
 
+const instantiateUser = (id) => {
+  console.log("CURRENTUSERREPO", currentUserRepository);
+  console.log(">>>instantiateUser", currentUserRepository.data);
+  currentUser = currentUserRepository.createUser(id);
+};
+
 const promiseAll = () => {
-  Promise.all([fetchUserData(), fetchSleepData, fetchActivityData, fetchHydrationData]).then(data => {
+  Promise.all([fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData]).then(data => {
     apiUserData = (data[0])
-    console.log("THIS IS DATA", data[0])
+    console.log("THIS IS DATA", apiUserData)
     // (data[1]),
     // (data[2]),
     // (data[3])
   })
+  // currentUserRepository = new UserRepository(apiUserData);
+  instantiateUserRepository(apiUserData);
+  instantiateUser(5);
+  updateUserCard();
+  greetUser();
   //
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
@@ -50,14 +61,9 @@ const greetUser = () => {
   welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
 };
 
-const instantiateUser = (id) => {
-  console.log(">>>instantiateUser");
-  currentUser = currentUserRepository.createUser(id);
-};
 
 const updateUserCard = () => {
   console.log(">>>updateUserCard");
-
   userName.innerText = currentUser.getFirstName();
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
@@ -71,11 +77,10 @@ const updateUserCard = () => {
 
 const loadPage = () => {
   promiseAll();
-  instantiateUserRepository(apiUserData);
-  // console.log("TEEESTTTTT", promiseAll())
-  instantiateUser(5);
-  updateUserCard();
-  greetUser();
+  // instantiateUserRepository(apiUserData);
+  // instantiateUser(5);
+  // updateUserCard();
+  // greetUser();
 };
 
 
