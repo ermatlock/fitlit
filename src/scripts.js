@@ -28,31 +28,35 @@ const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
 
 
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
+
 const instantiateUserRepository = (data) => {
-  // console.log(">>>instantiateUserREPOOO");
   currentUserRepository = new UserRepository(data);
+
 };
 
 const instantiateUser = (id) => {
-  console.log("CURRENTUSERREPO", currentUserRepository);
-  console.log(">>>instantiateUser", currentUserRepository.data);
   currentUser = currentUserRepository.createUser(id);
 };
 
 const promiseAll = () => {
-  Promise.all([fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData]).then(data => {
-    apiUserData = (data[0])
-    console.log("THIS IS DATA", apiUserData)
+  Promise.all([fetchUserData(), fetchSleepData(), fetchActivityData(), fetchHydrationData()])
+  .then((data) => {
+    apiUserData = data[0].userData
+    const id = getRandomIndex(apiUserData)
+    instantiateUserRepository(apiUserData)
+    instantiateUser(id)
+    updateUserCard()
+    greetUser()
+    // console.log("DATA0", data[0].userData)
+    // console.log("THIS IS DATA", apiUserData)
+    // console.log("WHAT", data)
     // (data[1]),
     // (data[2]),
     // (data[3])
   })
-  // currentUserRepository = new UserRepository(apiUserData);
-  instantiateUserRepository(apiUserData);
-  instantiateUser(5);
-  updateUserCard();
-  greetUser();
-  //
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
 };
