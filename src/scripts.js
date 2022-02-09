@@ -50,9 +50,6 @@ const promiseAll = () => {
     instantiateUser(id)
     updateUserCard()
     greetUser()
-    // console.log("DATA0", data[0].userData)
-    // console.log("THIS IS DATA", apiUserData)
-    // console.log("WHAT", data)
     // (data[1]),
     // (data[2]),
     // (data[3])
