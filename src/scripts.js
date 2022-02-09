@@ -52,7 +52,9 @@ const updateUserCard = () => {
 const promiseAll = () => {
   Promise.all([fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData])
   .then(data => {
-    currentUserRepository = new UserRepository(data[0])
+    currentUserRepository = new UserRepository(data[0]),
+    (data[1]),
+    (data[2]),
   })
 
   .catch((error) => console.log(error));

@@ -27,7 +27,7 @@ const fetchHydrationData = () => {
 
 export {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
 
-
+// export defualt {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
 
 
 //POST request
