@@ -1,36 +1,33 @@
 // //FETCH calls
 //
-export const fetchUserData = () => {
+
+
+const fetchUserData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
-  .then((response) => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.log(error));
+    .then((response) => response.json())
 };
 
-export const fetchSleepData = () => {
+const fetchSleepData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/sleep")
-  .then((response) => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.log(error));
+    .then((response) => response.json())
+
 };
 
-export const fetchActivityData = () => {
+const fetchActivityData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/activity")
-  .then((response) => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.log(error));
+    .then((response) => response.json())
+
 };
 
-export const fetchHydrationData = () => {
+const fetchHydrationData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/hydration")
-  .then((response) => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.log(error));
+    .then((response) => response.json())
 };
 
-export const promiseAll = () => {
-  return Promise.all([fetchUserData(), fetchSleepData(), fetchActivityData(), fetchHydrationData()])
-};
+
+export {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
+
+
 
 
 //POST request

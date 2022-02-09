@@ -7,9 +7,14 @@ import "./images/water.svg";
 import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
-import {promiseAll} from "./apiCalls.js";
+import {
+  fetchUserData,
+  fetchSleepData,
+  fetchActivityData,
+  fetchHydrationData
+} from "./apiCalls.js";
 
-let currentUserRepository = new UserRepository(userData);
+let currentUserRepository;
 let currentUser;
 
 const welcome = document.getElementById("welcome");
@@ -43,16 +48,24 @@ const updateUserCard = () => {
   // userFriends.innerText = currentUser.friends;
 };
 
-const loader = () => {
+
+const promiseAll = () => {
+  Promise.all([fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData])
+  .then(data => {
+    currentUserRepository = new UserRepository(data[0])
+  })
+
+  .catch((error) => console.log(error));
+  //^^make a modal for error message
+};
+
+const loadPage = () => {
   instantiateUser(5);
   updateUserCard();
   greetUser();
+  // promiseAll();
+  console.log("TEEESTTTTT", promiseAll())
 };
 
-const loadAPIs() => {
 
-}
-
-
-
-window.onload = loader;
+window.onload = loadPage;
