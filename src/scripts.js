@@ -14,6 +14,7 @@ import {
   fetchHydrationData
 } from "./apiCalls.js";
 
+let apiUserData;
 let currentUserRepository;
 let currentUser;
 
@@ -25,6 +26,25 @@ const userStrideLength = document.getElementById("userStrideLength");
 const userDailyStep = document.getElementById("userDailyStep");
 const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
+
+
+const instantiateUserRepository = (data) => {
+  // console.log(">>>instantiateUserREPOOO");
+  currentUserRepository = new UserRepository(data);
+};
+
+const promiseAll = () => {
+  Promise.all([fetchUserData(), fetchSleepData, fetchActivityData, fetchHydrationData]).then(data => {
+    apiUserData = (data[0])
+    console.log("THIS IS DATA", data[0])
+    // (data[1]),
+    // (data[2]),
+    // (data[3])
+  })
+  //
+  // .catch((error) => console.log(error));
+  // //^^make a modal for error message
+};
 
 const greetUser = () => {
   welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
@@ -49,24 +69,13 @@ const updateUserCard = () => {
 };
 
 
-const promiseAll = () => {
-  Promise.all([fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData])
-  .then(data => {
-    currentUserRepository = new UserRepository(data[0]),
-    (data[1]),
-    (data[2]),
-  })
-
-  .catch((error) => console.log(error));
-  //^^make a modal for error message
-};
-
 const loadPage = () => {
+  promiseAll();
+  instantiateUserRepository(apiUserData);
+  // console.log("TEEESTTTTT", promiseAll())
   instantiateUser(5);
   updateUserCard();
   greetUser();
-  // promiseAll();
-  console.log("TEEESTTTTT", promiseAll())
 };
 
 
