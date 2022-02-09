@@ -1,10 +1,14 @@
 import "./css/styles.css";
 import "./images/turing-logo.png";
+import "./images/menu-dots.svg";
+import "./images/sexual-activity.svg";
+import "./images/sleep.svg";
+import "./images/water.svg";
 import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
 
-const currentUserRepository = new UserRepository();
+let currentUserRepository = new UserRepository(userData);
 let currentUser;
 
 const userName = document.getElementById("userName");
@@ -14,13 +18,20 @@ const userStrideLength = document.getElementById("userStrideLength");
 const userDailyStep = document.getElementById("userDailyStep");
 const userFriends = document.getElementById("userFriends");
 
-const createUser = (id) => {
+const instantiateUser = (id) => {
+  console.log(">>>instantiateUser");
   currentUser = currentUserRepository.createUser(id);
 };
 
 const updateUserCard = (id) => {
-  createUser(5);
+  console.log(">>>updateUserCard");
+  instantiateUser(id);
   userName.innerText = currentUser.getFirstName();
   userAddress.innerText = currentUser.address;
-  user;
+  userEmail.innerText = currentUser.email;
+  userStrideLength.innerText = currentUser.strideLength;
+  userDailyStep.innerText = currentUser.dailyStepGoal;
+  // userFriends.innerText = currentUser.friends;
 };
+
+window.onload = updateUserCard(5);
