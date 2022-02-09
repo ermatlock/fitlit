@@ -1,17 +1,51 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
+import "./css/styles.css";
+import "./images/turing-logo.png";
+import "./images/menu-dots.svg";
+import "./images/sexual-activity.svg";
+import "./images/sleep.svg";
+import "./images/water.svg";
+import userData from "./data/users";
+import UserRepository from "./UserRepository";
+import User from "./User";
 
-console.log(userData,"<>>>>userData")
-// An example of how you tell webpack to use a CSS file
-import './css/styles.css';
+let currentUserRepository = new UserRepository(userData);
+let currentUser;
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+const welcome = document.getElementById("welcome");
+const userName = document.getElementById("userName");
+const userAddress = document.getElementById("userAddress");
+const userEmail = document.getElementById("userEmail");
+const userStrideLength = document.getElementById("userStrideLength");
+const userDailyStep = document.getElementById("userDailyStep");
+const compareStepGoal = document.getElementById("compareStepGoal");
+const userFriends = document.getElementById("userFriends");
 
-console.log('This is the JavaScript entry file - your code begins here.');
+const greetUser = () => {
+  welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
+};
 
-// An example of how you tell webpack to use a JS file
+const instantiateUser = (id) => {
+  console.log(">>>instantiateUser");
+  currentUser = currentUserRepository.createUser(id);
+};
 
-import userData from './data/users';
+const updateUserCard = () => {
+  console.log(">>>updateUserCard");
 
-import UserRepository from './UserRepository';
+  userName.innerText = currentUser.getFirstName();
+  userAddress.innerText = currentUser.address;
+  userEmail.innerText = currentUser.email;
+  userStrideLength.innerText = currentUser.strideLength;
+  compareStepGoal.innerText = `You: ${
+    currentUser.dailyStepGoal
+  }. Average: ${currentUserRepository.returnStepGoal()}.`;
+  // userFriends.innerText = currentUser.friends;
+};
+
+const loader = () => {
+  instantiateUser(5);
+  updateUserCard();
+  greetUser();
+};
+
+window.onload = loader;

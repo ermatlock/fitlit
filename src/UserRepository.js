@@ -1,22 +1,22 @@
-import User from './User';
+import User from "./User";
 
 class UserRepository {
-  constructor(data){
-    this.data = data
+  constructor(data) {
+    this.data = data;
   }
 
-  returnUserData(id){
-    const oneUser = this.data.find(user => user.id === id)
-    return new User(oneUser)
+  createUser(id) {
+    const oneUser = this.data.find((user) => user.id === id);
+    return new User(oneUser);
   }
 
-  returnStepGoal(){
+  returnStepGoal() {
     let result = this.data.reduce((totalStepGoal, user) => {
-      totalStepGoal += user.dailyStepGoal
-      return totalStepGoal
-    }, 0)
-    const average = result/this.data.length
-    return Math.round(average)
+      totalStepGoal += user.dailyStepGoal;
+      return totalStepGoal;
+    }, 0);
+    const average = result / this.data.length;
+    return Math.round(average);
   }
 }
 
