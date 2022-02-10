@@ -11,7 +11,7 @@ import {
   fetchUserData,
   fetchSleepData,
   fetchActivityData,
-  fetchHydrationData
+  fetchHydrationData,
 } from "./apiCalls.js";
 
 let apiUserData;
@@ -26,7 +26,8 @@ const userStrideLength = document.getElementById("userStrideLength");
 const userDailyStep = document.getElementById("userDailyStep");
 const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
-
+const dailyHydration = document.getElementById("dailyHydration");
+const weeklyHydration = document.getElementById("weeklyHydration");
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -34,7 +35,6 @@ const getRandomIndex = (array) => {
 
 const instantiateUserRepository = (data) => {
   currentUserRepository = new UserRepository(data);
-
 };
 
 const instantiateUser = (id) => {
@@ -42,18 +42,22 @@ const instantiateUser = (id) => {
 };
 
 const promiseAll = () => {
-  Promise.all([fetchUserData(), fetchSleepData(), fetchActivityData(), fetchHydrationData()])
-  .then((data) => {
-    apiUserData = data[0].userData
-    const id = getRandomIndex(apiUserData)
-    instantiateUserRepository(apiUserData)
-    instantiateUser(id)
-    updateUserCard()
-    greetUser()
+  Promise.all([
+    fetchUserData(),
+    fetchSleepData(),
+    fetchActivityData(),
+    fetchHydrationData(),
+  ]).then((data) => {
+    apiUserData = data[0].userData;
+    const id = getRandomIndex(apiUserData);
+    instantiateUserRepository(apiUserData);
+    instantiateUser(id);
+    updateUserCard();
+    greetUser();
     // (data[1]),
     // (data[2]),
     // (data[3])
-  })
+  });
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
 };
@@ -61,7 +65,6 @@ const promiseAll = () => {
 const greetUser = () => {
   welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
 };
-
 
 const updateUserCard = () => {
   console.log(">>>updateUserCard");
@@ -75,7 +78,6 @@ const updateUserCard = () => {
   // userFriends.innerText = currentUser.friends;
 };
 
-
 const loadPage = () => {
   promiseAll();
   // instantiateUserRepository(apiUserData);
@@ -83,6 +85,5 @@ const loadPage = () => {
   // updateUserCard();
   // greetUser();
 };
-
 
 window.onload = loadPage;
