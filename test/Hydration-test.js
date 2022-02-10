@@ -47,7 +47,7 @@ let hydrationData
   })
 
   it('should calculate one Users average fluid oz of all time', () => {
-    expect(hydration1.getAllWaterAvg()).to.equal(75)
+    expect(hydration1.getAllWaterAvg()).to.equal(60)
   })
 
   it('should find a date and return how many Oz drank that day', () => {
@@ -55,6 +55,9 @@ let hydrationData
   })
 
   it('should show each days water consumtion for a week', () => {
-    expect(hydration1.getWeeksWater("2019/06/17")).to.eql([96, 61, 91, 50, 50, 43, 39])
+    expect(hydration1.getWeeksWater("2019/06/18")).to.eql([ 61, 91, 50, 50, 43, 39, 39])
   })
 })
+
+//[96, 61, 91, 50, 50, 43, 39]
+// "2019/06/17"

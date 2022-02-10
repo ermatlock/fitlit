@@ -20,13 +20,10 @@ class Hydration {
   }
 
   getWeeksWater(startDate) {
-    let week = []
-    this.hydrationData.forEach(day => {
-      if (day.date === startDate && week.length < 7){
-        week.push(day.numOunces)
-      }
-    })
-    return week
+    const index = this.hydrationData.findIndex(item => item.date === startDate);
+    const weeklyData = this.hydrationData.slice(index, index + 7);
+    const oneWeekOz = weeklyData.map(day => day.numOunces)
+    return oneWeekOz
   }
 
 }
