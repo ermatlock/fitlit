@@ -19,6 +19,16 @@ class Hydration {
     return this.hydrationData.find(day => day.date === date).numOunces
   }
 
+  getWeeksWater(startDate) {
+    let week = []
+    this.hydrationData.forEach(day => {
+      if (day.date === startDate && week.length < 7){
+        week.push(day.numOunces)
+      }
+    })
+    return week
+  }
+
 }
 
 export default Hydration
