@@ -25,7 +25,9 @@ class Hydration {
     const index = this.hydrationData.findIndex(
       (item) => item.date === startDate
     );
+    // const updatedIndex = index - 6;
     const weeklyData = this.hydrationData.slice(index, index + 7);
+    // console.log(weeklyData);
     const oneWeekOz = weeklyData.map((day) => day.numOunces);
     return oneWeekOz;
   }
