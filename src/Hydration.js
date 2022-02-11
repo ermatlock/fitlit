@@ -1,31 +1,34 @@
 import User from "./User";
 
 class Hydration {
-  constructor (user, apiData) {
-    this.userId = user.id
-    this.hydrationData  = apiData.filter(person => person.userID === this.userId )
+  constructor(id, apiData) {
+    this.userId = id;
+    this.hydrationData = apiData.filter(
+      (person) => person.userID === this.userId
+    );
   }
 
   getAllWaterAvg() {
     let totalOz = this.hydrationData.reduce((total, currDay) => {
-      total += currDay.numOunces
-      return total
-    }, 0)
-    let average = totalOz/this.hydrationData.length
-    return Math.round(average)
+      total += currDay.numOunces;
+      return total;
+    }, 0);
+    let average = totalOz / this.hydrationData.length;
+    return Math.round(average);
   }
 
-  findOzByDate(date) {
-    return this.hydrationData.find(day => day.date === date).numOunces
+  findOzByLast() {
+    let position = this.hydrationData.length - 1;
+
+    return this.hydrationData[position].numOunces;
   }
 
-  getWeeksWater(startDate) {
-    const index = this.hydrationData.findIndex(item => item.date === startDate);
+  getWeeksWater() {
+    const index = this.hydrationData.length - 7;
     const weeklyData = this.hydrationData.slice(index, index + 7);
-    const oneWeekOz = weeklyData.map(day => day.numOunces)
-    return oneWeekOz
+    const oneWeekOz = weeklyData.map((day) => day.numOunces);
+    return oneWeekOz;
   }
-
 }
 
-export default Hydration
+export default Hydration;

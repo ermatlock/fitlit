@@ -7,16 +7,20 @@ import "./images/water.svg";
 // import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
+import Hydration from "./Hydration";
 import {
   fetchUserData,
   fetchSleepData,
   fetchActivityData,
-  fetchHydrationData
+  fetchHydrationData,
 } from "./apiCalls.js";
+import { Datepicker } from "vanillajs-datepicker";
 
 let apiUserData;
+let apiHydrationData;
 let currentUserRepository;
 let currentUser;
+let currentHydration;
 
 const welcome = document.getElementById("welcome");
 const userName = document.getElementById("userName");
@@ -26,7 +30,11 @@ const userStrideLength = document.getElementById("userStrideLength");
 const userDailyStep = document.getElementById("userDailyStep");
 const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
+const dailyHydration = document.getElementById("dailyHydration");
+const weeklyHydration = document.getElementById("weeklyHydration");
+// const elem = document.getElementById("foo");
 
+// const datePicker = new Datepicker(elem, {});
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -34,26 +42,35 @@ const getRandomIndex = (array) => {
 
 const instantiateUserRepository = (data) => {
   currentUserRepository = new UserRepository(data);
-
 };
 
 const instantiateUser = (id) => {
   currentUser = currentUserRepository.createUser(id);
 };
 
+const instantiateHydration = (id, apiData) => {
+  currentHydration = new Hydration(id, apiData);
+};
+
 const promiseAll = () => {
-  Promise.all([fetchUserData(), fetchSleepData(), fetchActivityData(), fetchHydrationData()])
-  .then((data) => {
-    apiUserData = data[0].userData
-    const id = getRandomIndex(apiUserData)
-    instantiateUserRepository(apiUserData)
-    instantiateUser(id)
-    updateUserCard()
-    greetUser()
+  Promise.all([
+    fetchUserData(),
+    fetchSleepData(),
+    fetchActivityData(),
+    fetchHydrationData(),
+  ]).then((data) => {
+    apiUserData = data[0].userData;
+    apiHydrationData = data[3].hydrationData;
+    const id = getRandomIndex(apiUserData);
+    instantiateUserRepository(apiUserData);
+    instantiateUser(id);
+    instantiateHydration(id, apiHydrationData);
+    updateUserCard();
+    updateHydrationCard();
+    greetUser();
     // (data[1]),
     // (data[2]),
-    // (data[3])
-  })
+  });
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
 };
@@ -61,7 +78,6 @@ const promiseAll = () => {
 const greetUser = () => {
   welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
 };
-
 
 const updateUserCard = () => {
   console.log(">>>updateUserCard");
@@ -75,14 +91,17 @@ const updateUserCard = () => {
   // userFriends.innerText = currentUser.friends;
 };
 
+const updateHydrationCard = () => {
+  // what is the last date for the user in the array
+  //
+
+  console.log(">>>updateHydrationCard");
+  dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
+  weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
+};
 
 const loadPage = () => {
   promiseAll();
-  // instantiateUserRepository(apiUserData);
-  // instantiateUser(5);
-  // updateUserCard();
-  // greetUser();
 };
-
 
 window.onload = loadPage;
