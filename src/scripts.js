@@ -14,6 +14,7 @@ import {
   fetchActivityData,
   fetchHydrationData,
 } from "./apiCalls.js";
+import { Datepicker } from "vanillajs-datepicker";
 
 let apiUserData;
 let apiHydrationData;
@@ -31,6 +32,9 @@ const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
 const dailyHydration = document.getElementById("dailyHydration");
 const weeklyHydration = document.getElementById("weeklyHydration");
+// const elem = document.getElementById("foo");
+
+// const datePicker = new Datepicker(elem, {});
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -88,10 +92,12 @@ const updateUserCard = () => {
 };
 
 const updateHydrationCard = () => {
-  // will eventually receive argument from user
+  // what is the last date for the user in the array
+  //
+
   console.log(">>>updateHydrationCard");
-  dailyHydration.innerText = `${currentHydration.findOzByDate("2019/10/31")}`;
-  weeklyHydration.innerText = `${currentHydration.getWeeksWater("2019/10/20")}`;
+  dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
+  weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
 };
 
 const loadPage = () => {
