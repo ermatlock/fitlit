@@ -76,19 +76,11 @@ describe("Hydration", () => {
   });
 
   it("should find a date and return how many Oz drank that day", () => {
-    expect(hydration1.findOzByDate("2019/06/16")).to.equal(69);
+    expect(hydration1.findOzByLast()).to.equal(39);
   });
 
   it("should show each days water consumtion for a week", () => {
-    expect(hydration1.getWeeksWater("2019/06/18")).to.eql([
-      61,
-      91,
-      50,
-      50,
-      43,
-      39,
-      39,
-    ]);
+    expect(hydration1.getWeeksWater()).to.eql([61, 91, 50, 50, 43, 39, 39]);
   });
 });
 

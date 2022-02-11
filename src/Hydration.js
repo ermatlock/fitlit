@@ -17,17 +17,15 @@ class Hydration {
     return Math.round(average);
   }
 
-  findOzByDate(date) {
-    return this.hydrationData.find((day) => day.date === date).numOunces;
+  findOzByLast() {
+    let position = this.hydrationData.length - 1;
+
+    return this.hydrationData[position].numOunces;
   }
 
-  getWeeksWater(startDate) {
-    const index = this.hydrationData.findIndex(
-      (item) => item.date === startDate
-    );
-    // const updatedIndex = index - 6;
+  getWeeksWater() {
+    const index = this.hydrationData.length - 7;
     const weeklyData = this.hydrationData.slice(index, index + 7);
-    // console.log(weeklyData);
     const oneWeekOz = weeklyData.map((day) => day.numOunces);
     return oneWeekOz;
   }
