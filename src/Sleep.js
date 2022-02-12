@@ -2,6 +2,7 @@ class Sleep {
   constructor(id, sleepData) {
     this.userId = id
     this.sleepData = sleepData.filter((person) => person.userID === this.userId)
+    this.sleepDataAll = sleepData
   }
 
   getAverageDailySleep(){
@@ -42,6 +43,15 @@ class Sleep {
     let oneWeekHoursSlept = weeklyData.map((day) => day.hoursSlept);
     return oneWeekHoursSlept;
   }
+
+  getWeeklySleepQuality() {
+    let lastDayIndex = this.sleepData.length - 7;
+    let weeklyData = this.sleepData.slice(lastDayIndex, lastDayIndex + 7);
+    let oneWeekSleepQuality = weeklyData.map((day) => day.sleepQuality);
+    return oneWeekSleepQuality;
+  }
+
+
 
 }
 
