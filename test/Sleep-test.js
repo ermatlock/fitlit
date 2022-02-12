@@ -169,7 +169,7 @@ describe('sleep', () => {
   });
 
   it("should calculate average number of hours slept per day", () => {
-    expect(sleep1.getAverageDailySleep()).to.equal('8.12')
+    expect(sleep1.getAverageSleepHours()).to.equal('8.12')
   })
 
   it("should calculate average sleep quality of all time", () => {
@@ -199,7 +199,7 @@ describe('sleep', () => {
   })
 
   it("should return average sleep quality for all users", () => {
-
+    expect(sleep1.getAvgSleepAllUsers()).to.eql("2.88")
   })
 
 })
