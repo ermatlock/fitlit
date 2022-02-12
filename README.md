@@ -48,4 +48,4 @@ To get a local copy up and running follow these simple steps.
 
 
 # Code Architecture 
-
+If you want to know more about our code architecture, [click here]().
