@@ -26,6 +26,8 @@ Fitlit is a web application that displays a dashboard of user information from s
 - Mochas/Chai
 
 # Getting Started
+To get a local copy up and running follow these simple steps.
+
 ## Installation
 
 1. In your terminal, clone the repo
