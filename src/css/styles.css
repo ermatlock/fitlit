@@ -40,6 +40,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: white;
   overflow-wrap: break-word;
 }
 #root,
@@ -51,14 +52,16 @@ body,
 html {
   background-image: linear-gradient(
     to top,
-    #ff9a9e 0%,
-    #fecfef 99%,
-    #fecfef 100%
+    #070024 20%,
+    #32135a 64%,
+    #0c0132 100%
   );
   background-repeat: no-repeat;
   height: 100%;
 }
+/*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 
+/* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -70,11 +73,15 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px 0px 20px;
-  border: 2px solid blue;
+  border: 2px solid black;
 }
 
 .rubiks-cube-image {
   height: 3vh;
+}
+
+.welcome-user {
+  font-size: 8vh;
 }
 
 .card-wrapper {
@@ -83,8 +90,8 @@ html {
   height: 50vh;
   align-content: center;
   justify-content: space-evenly;
-  margin-top: 20px;
-  border: 2px solid blue;
+  /* margin-top: 20px; */
+  border: 2px solid black;
   padding: 20px 0px 20px 0px;
 }
 
@@ -95,6 +102,7 @@ html {
   border-radius: 15px;
   flex-direction: column;
   align-items: center;
+  font-size: 6vh;
 }
 
 .activity-card {
@@ -113,5 +121,14 @@ html {
 }
 
 .card-image {
-  height: 8vh;
+  margin: 4%;
+  height: 12vh;
+}
+
+.water-image {
+  fill: #414040;
+}
+
+.hidden {
+  display: none;
 }
