@@ -2,7 +2,7 @@
 
 Fitlit is a web application that displays a dashboard of user information from steps to sleep and hydration. The application calculates and displays a users:
 
-![gif](https://recordit.co/adZmTHnzcK)
+![gif](http://g.recordit.co/adZmTHnzcK.gif)
 ### Sleep
 - average sleep of all time
 - average sleep quality of all time
