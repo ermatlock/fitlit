@@ -189,4 +189,17 @@ describe('sleep', () => {
     expect(sleep1.getWeeklyHoursSlept()).to.eql(weeklySleep)
   })
 
+  it("should return sleep quality for last 7 days", () => {
+    let weeklySleep = [3.1, 1.2, 1.2, 4.2, 3, 1.5, 1.3]
+    expect(sleep1.getWeeklySleepQuality()).to.eql(weeklySleep)
+  })
+
+  it("should accept sleep data for all users for all time", () => {
+    expect(sleep1.sleepDataAll).to.eql(sleepData)
+  })
+
+  it("should return average sleep quality for all users", () => {
+
+  })
+
 })
