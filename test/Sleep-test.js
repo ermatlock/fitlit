@@ -35,4 +35,10 @@ let sleepData;
     expect(sleep1.getAverageDailySleep()).to.equal('8.12')
   })
 
+  it("should calculate average sleep quality of all time", () => {
+    expect(sleep1.getAverageSleepQuality()).to.equal('2.43')
+  })
+
+  it("should show ")
+
 })
