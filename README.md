@@ -36,6 +36,13 @@ Fitlit is a web application that displays a dashboard of user information from s
    ```sh
    npm install
    ```
+   
+ ## Run Test
+ 
+ 1. To run the tests written in mocha
+   ```sh
+   npm start
+   ```
 
 
 # Code Architecture 
