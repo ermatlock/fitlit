@@ -42,6 +42,8 @@ h5,
 h6 {
   color: white;
   overflow-wrap: break-word;
+  /* margin: 0px
+  padding: 0px */
 }
 #root,
 #__next {
@@ -62,6 +64,17 @@ html {
 /*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
+h1 {
+  font-size: 6vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
+
+h3 {
+  font-size: 2vh;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -97,19 +110,19 @@ html {
 
 .card {
   display: flex;
-  width: 20vw;
-  border: 2px solid hotpink;
-  border-radius: 15px;
+  width: 21vw;
+  border: 2px solid #ffffff82;
+  border-radius: 28px;
   flex-direction: column;
   align-items: center;
-  font-size: 6vh;
+  /* font-size: 6vh; */
 }
 
 .activity-card {
   background-color: antiquewhite;
 }
 .hydration-card {
-  background-color: coral;
+  background-color: #ff6d37;
 }
 
 .sleep-card {
