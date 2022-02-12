@@ -30,6 +30,19 @@ class Sleep {
     return this.sleepData[lastDayIndex].hoursSlept;
 }
 
+  getSleepQualityByDate() {
+  let lastDayIndex = this.sleepData.length - 1;
+
+  return this.sleepData[lastDayIndex].sleepQuality;
+}
+
+  getWeeklyHoursSlept() {
+    let lastDayIndex = this.sleepData.length - 7;
+    let weeklyData = this.sleepData.slice(lastDayIndex, lastDayIndex + 7);
+    let oneWeekHoursSlept = weeklyData.map((day) => day.hoursSlept);
+    return oneWeekHoursSlept;
+  }
+
 }
 
 export default Sleep
