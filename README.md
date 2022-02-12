@@ -37,11 +37,11 @@ Fitlit is a web application that displays a dashboard of user information from s
    npm install
    ```
    
- ## Run Test
- 
- 1. In your terminal, to run a test written in moch
+ ## Installation
+
+1. In your terminal, clone the repo
    ```sh
-   npm start
+   git clone git@github.com:ermatlock/fitlit.git
    ```
 
 
