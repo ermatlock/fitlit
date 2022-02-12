@@ -110,18 +110,18 @@ const updateUserCard = () => {
 
 const updateHydrationCard = () => {
   console.log(">>>updateHydrationCard");
-  dailyHydration.innerText = `${currentHydration.findOzByLast()} Oz`;
+  dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
   // weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
 };
 
 const updateSleepCard = () => {
   console.log(">>>updateSleepCard");
-  oneNightsHours.innerText = `One Night: ${currentSleep.getSleepHoursByDate()}`;
-  oneNightsQuality.innerText = `One Night Quality: ${currentSleep.getSleepQualityByDate()}`;
-  oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
-  oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
-  allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
-  allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+  oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
+  oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
+  // oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
+  // oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
+  // allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
+  // allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
 };
 
 const loadPage = () => {
