@@ -42,7 +42,6 @@ const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeUserHourAvg = document.getElementById("allTimeUserHourAvg");
 const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
 
-
 // const elem = document.getElementById("foo");
 
 // const datePicker = new Datepicker(elem, {});
@@ -64,7 +63,7 @@ const instantiateHydration = (id, apiData) => {
 };
 
 const instantiateSleep = (id, sleepData) => {
-  currentSleep = new Sleep(id, sleepData)
+  currentSleep = new Sleep(id, sleepData);
 };
 
 const promiseAll = () => {
@@ -94,7 +93,7 @@ const promiseAll = () => {
 };
 
 const greetUser = () => {
-  welcome.innerText = `Welcome ${currentUser.getFirstName()}`;
+  welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
 };
 
 const updateUserCard = () => {
@@ -111,10 +110,9 @@ const updateUserCard = () => {
 
 const updateHydrationCard = () => {
   console.log(">>>updateHydrationCard");
-  dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
-  weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
+  dailyHydration.innerText = `${currentHydration.findOzByLast()} Oz`;
+  // weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
 };
-
 
 const updateSleepCard = () => {
   console.log(">>>updateSleepCard");
@@ -124,17 +122,10 @@ const updateSleepCard = () => {
   oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
   allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
   allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
-
 };
-
-
 
 const loadPage = () => {
   promiseAll();
 };
-
-
-
-
 
 window.onload = loadPage;
