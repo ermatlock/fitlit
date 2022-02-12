@@ -8,6 +8,7 @@ import "./images/water.svg";
 import UserRepository from "./UserRepository";
 import User from "./User";
 import Hydration from "./Hydration";
+import Sleep from "./Sleep";
 import {
   fetchUserData,
   fetchSleepData,
@@ -16,11 +17,13 @@ import {
 } from "./apiCalls.js";
 import { Datepicker } from "vanillajs-datepicker";
 
-let apiUserData;
-let apiHydrationData;
+// let apiUserData;
+// let apiHydrationData;
+// let apiSleepData;
 let currentUserRepository;
 let currentUser;
 let currentHydration;
+let currentSleep;
 
 const welcome = document.getElementById("welcome");
 const userName = document.getElementById("userName");
@@ -32,6 +35,14 @@ const compareStepGoal = document.getElementById("compareStepGoal");
 const userFriends = document.getElementById("userFriends");
 const dailyHydration = document.getElementById("dailyHydration");
 const weeklyHydration = document.getElementById("weeklyHydration");
+const oneNightsHours = document.getElementById("oneNightsHours");
+const oneNightsQuality = document.getElementById("oneNightsQuality");
+const oneWeeksHours = document.getElementById("oneWeeksHours");
+const oneWeeksQuality = document.getElementById("oneWeeksQuality");
+const allTimeUserHourAvg = document.getElementById("allTimeUserHourAvg");
+const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
+
+
 // const elem = document.getElementById("foo");
 
 // const datePicker = new Datepicker(elem, {});
@@ -52,6 +63,10 @@ const instantiateHydration = (id, apiData) => {
   currentHydration = new Hydration(id, apiData);
 };
 
+const instantiateSleep = (id, sleepData) => {
+  currentSleep = new Sleep(id, sleepData)
+};
+
 const promiseAll = () => {
   Promise.all([
     fetchUserData(),
@@ -59,8 +74,9 @@ const promiseAll = () => {
     fetchActivityData(),
     fetchHydrationData(),
   ]).then((data) => {
-    apiUserData = data[0].userData;
-    apiHydrationData = data[3].hydrationData;
+    const apiUserData = data[0].userData;
+    const apiHydrationData = data[3].hydrationData;
+    const apiSleepData = data[1].sleepData;
     const id = getRandomIndex(apiUserData);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
@@ -68,6 +84,8 @@ const promiseAll = () => {
     updateUserCard();
     updateHydrationCard();
     greetUser();
+    instantiateSleep(id, apiSleepData);
+    updateSleepCard();
     // (data[1]),
     // (data[2]),
   });
@@ -92,16 +110,31 @@ const updateUserCard = () => {
 };
 
 const updateHydrationCard = () => {
-  // what is the last date for the user in the array
-  //
-
   console.log(">>>updateHydrationCard");
   dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
   weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
 };
 
+
+const updateSleepCard = () => {
+  console.log(">>>updateSleepCard");
+  oneNightsHours.innerText = `One Night: ${currentSleep.getSleepHoursByDate()}`;
+  oneNightsQuality.innerText = `One Night Quality: ${currentSleep.getSleepQualityByDate()}`;
+  oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
+  oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
+  allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
+  allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+
+};
+
+
+
 const loadPage = () => {
   promiseAll();
 };
+
+
+
+
 
 window.onload = loadPage;
