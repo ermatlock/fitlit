@@ -14,3 +14,21 @@ Fitlit is a web application that displays a dashboard of user information from s
 - num ounces drank most recently 
 - num ounces consumed for each day over the last week
 
+# Contributors
+- [Emily Corcoran](https://github.com/Emily-Cathleen)
+- [Eric Matlock](https://github.com/ermatlock)
+- [Emili Kaiman](https://github.com/Ekaiman)
+
+# Technologies Used 
+- Javascript
+- HTML
+- CSS
+- Mochas/Chai
+
+# Local Setup Instructions 
+- From the FitLit repo, click the green code button and coppy the SSH link
+- Open yout terminal and git clone 
+- In your terminal type cd fitlit
+
+# Code Architecture 
+
