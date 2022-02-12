@@ -25,10 +25,18 @@ Fitlit is a web application that displays a dashboard of user information from s
 - CSS
 - Mochas/Chai
 
-# Local Setup Instructions 
-- From the FitLit repo, click the green code button and coppy the SSH link
-- Open yout terminal and git clone 
-- In your terminal type cd fitlit
+# Getting Started
+## Installation
+
+1. Clone the repo
+   ```sh
+   git clone git@github.com:ermatlock/fitlit.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
 
 # Code Architecture 
 
