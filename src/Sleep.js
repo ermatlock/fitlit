@@ -24,6 +24,12 @@ class Sleep {
     return average.toFixed(2)
   }
 
+  getSleepHoursByDate() {
+    let lastDayIndex = this.sleepData.length - 1;
+
+    return this.sleepData[lastDayIndex].hoursSlept;
+}
+
 }
 
 export default Sleep

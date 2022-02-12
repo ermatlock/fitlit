@@ -39,6 +39,8 @@ let sleepData;
     expect(sleep1.getAverageSleepQuality()).to.equal('2.43')
   })
 
-  it("should show ")
+  it("should calculate hours slept for a specific date", () => {
+    expect(sleep1.getSleepHoursByDate()).to.equal(8)
+  })
 
 })
