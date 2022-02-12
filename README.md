@@ -28,7 +28,7 @@ Fitlit is a web application that displays a dashboard of user information from s
 # Getting Started
 ## Installation
 
-1. Clone the repo
+1. In your terminal, clone the repo
    ```sh
    git clone git@github.com:ermatlock/fitlit.git
    ```
