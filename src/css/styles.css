@@ -17,6 +17,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: "Oswald", sans-serif;
 }
 img,
 picture,
@@ -39,7 +40,10 @@ h3,
 h4,
 h5,
 h6 {
+  color: white;
   overflow-wrap: break-word;
+  /* margin: 0px
+  padding: 0px */
 }
 #root,
 #__next {
@@ -50,57 +54,80 @@ body,
 html {
   background-image: linear-gradient(
     to top,
-    #ff9a9e 0%,
-    #fecfef 99%,
-    #fecfef 100%
+    #070024 20%,
+    #32135a 64%,
+    #0c0132 100%
   );
   background-repeat: no-repeat;
   height: 100%;
 }
+/*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 
+/* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
+h1 {
+  font-size: 6vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
+
+h3 {
+  font-size: 2vh;
+}
 .main-container {
   display: flex;
   flex-direction: column;
 }
 
 .nav-wrapper {
+  /* height: 10% */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px 0px 20px;
-  border: 2px solid blue;
+  border: 2px solid black;
 }
 
 .rubiks-cube-image {
   height: 3vh;
 }
 
+.welcome-user {
+  font-size: 8vh;
+}
+
 .card-wrapper {
   display: flex;
   flex-direction: row;
-  height: 50vh;
+  /* height: 45% */
   align-content: center;
   justify-content: space-evenly;
-  margin-top: 20px;
-  border: 2px solid blue;
+  /* margin-top: 20px; */
+  border: 2px solid black;
   padding: 20px 0px 20px 0px;
+}
+
+.graph-wrapper {
+  /* height: 45%; */
 }
 
 .card {
   display: flex;
-  width: 20vw;
-  border: 2px solid hotpink;
-  border-radius: 15px;
+  width: 21vw;
+  border: 2px solid #ffffff82;
+  border-radius: 28px;
   flex-direction: column;
   align-items: center;
+  /* font-size: 6vh; */
 }
 
 .activity-card {
-  background-color: antiquewhite;
+  background-color: #71c4ff;
 }
 .hydration-card {
-  background-color: coral;
+  background-color: #ff6d37;
 }
 
 .sleep-card {
@@ -112,5 +139,14 @@ html {
 }
 
 .card-image {
-  height: 8vh;
+  margin: 4%;
+  height: 12vh;
+}
+
+.water-image {
+  fill: #414040;
+}
+
+.hidden {
+  display: none;
 }
