@@ -221,4 +221,8 @@ describe("Activity", () => {
     let userOneData = activityData.filter((user) => user.userID === 1);
     expect(activity.activityData).to.eql(userOneData);
   });
+
+  it("should return most recent recorded number of steps for a user", () => {
+    expect(activity.getLastRecordedSteps()).to.equal(13928);
+  });
 });
