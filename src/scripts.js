@@ -9,6 +9,7 @@ import UserRepository from "./UserRepository";
 import User from "./User";
 import Hydration from "./Hydration";
 import Sleep from "./Sleep";
+import Activity from "./Activity";
 import {
   fetchUserData,
   fetchSleepData,
@@ -69,7 +70,7 @@ const instantiateSleep = (id, sleepData) => {
 };
 
 const instantiateActivity = (id, activityData) => {
-  currentActivity = new Activity();
+  currentActivity = new Activity(id, activityData);
 };
 
 const promiseAll = () => {
@@ -87,16 +88,14 @@ const promiseAll = () => {
     const id = getRandomIndex(apiUserData);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
-    instantiateHydration(id, apiHydrationData);
-    updateUserCard();
-    updateHydrationCard();
     greetUser();
+    // updateUserCard();
+    instantiateHydration(id, apiHydrationData);
+    updateHydrationCard();
     instantiateSleep(id, apiSleepData);
     updateSleepCard();
-    instantiateActivity();
+    instantiateActivity(id, apiActivityData);
     updateActivityCard();
-    // (data[1]),
-    // (data[2]),
   });
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
@@ -134,7 +133,10 @@ const updateSleepCard = () => {
   // allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
 };
 
-const updateActivityCard = () => {};
+const updateActivityCard = () => {
+  console.log(currentActivity.getLastRecordedSteps());
+  todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
+};
 
 const loadPage = () => {
   promiseAll();
