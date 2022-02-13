@@ -17,6 +17,7 @@ import {
   fetchHydrationData,
 } from "./apiCalls.js";
 import { Datepicker } from "vanillajs-datepicker";
+import {chart1} from "./ourCharts.js"
 
 // let apiUserData;
 // let apiHydrationData;
@@ -84,7 +85,7 @@ const promiseAll = () => {
     const apiSleepData = data[1].sleepData;
     const apiActivityData = data[2].activityData;
     const apiHydrationData = data[3].hydrationData;
-
+    const myChart = document.getElementById("myChart").getContext('2d')
     const id = getRandomIndex(apiUserData);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
@@ -96,7 +97,9 @@ const promiseAll = () => {
     updateSleepCard();
     instantiateActivity(id, apiActivityData);
     updateActivityCard();
+
   });
+  chart1(myChart, data[0])
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
 };
@@ -143,3 +146,5 @@ const loadPage = () => {
 };
 
 window.onload = loadPage;
+
+export default promiseAll
