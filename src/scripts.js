@@ -1,9 +1,9 @@
 import "./css/styles.css";
 import "./images/turing-logo.png";
 import "./images/menu-dots.svg";
-import "./images/sexual-activity.svg";
+import "./images/run.svg";
 import "./images/sleep.svg";
-import "./images/water.svg";
+import "./images/droplet-gradient.svg";
 // import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
@@ -24,6 +24,7 @@ let currentUserRepository;
 let currentUser;
 let currentHydration;
 let currentSleep;
+let currentActivity;
 
 const welcome = document.getElementById("welcome");
 const userName = document.getElementById("userName");
@@ -41,6 +42,7 @@ const oneWeeksHours = document.getElementById("oneWeeksHours");
 const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeUserHourAvg = document.getElementById("allTimeUserHourAvg");
 const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
+const todaySteps = document.getElementById("todaySteps");
 
 // const elem = document.getElementById("foo");
 
@@ -66,6 +68,10 @@ const instantiateSleep = (id, sleepData) => {
   currentSleep = new Sleep(id, sleepData);
 };
 
+const instantiateActivity = (id, activityData) => {
+  currentActivity = new Activity();
+};
+
 const promiseAll = () => {
   Promise.all([
     fetchUserData(),
@@ -74,8 +80,10 @@ const promiseAll = () => {
     fetchHydrationData(),
   ]).then((data) => {
     const apiUserData = data[0].userData;
-    const apiHydrationData = data[3].hydrationData;
     const apiSleepData = data[1].sleepData;
+    const apiActivityData = data[2].activityData;
+    const apiHydrationData = data[3].hydrationData;
+
     const id = getRandomIndex(apiUserData);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
@@ -85,6 +93,8 @@ const promiseAll = () => {
     greetUser();
     instantiateSleep(id, apiSleepData);
     updateSleepCard();
+    instantiateActivity();
+    updateActivityCard();
     // (data[1]),
     // (data[2]),
   });
@@ -115,7 +125,7 @@ const updateHydrationCard = () => {
 };
 
 const updateSleepCard = () => {
-  console.log(">>>updateSleepCard");
+  // console.log(">>>updateSleepCard");
   oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
   oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
   // oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
@@ -123,6 +133,8 @@ const updateSleepCard = () => {
   // allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
   // allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
 };
+
+const updateActivityCard = () => {};
 
 const loadPage = () => {
   promiseAll();
