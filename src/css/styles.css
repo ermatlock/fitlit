@@ -81,6 +81,7 @@ h3 {
 }
 
 .nav-wrapper {
+  /* height: 10% */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -100,12 +101,16 @@ h3 {
 .card-wrapper {
   display: flex;
   flex-direction: row;
-  height: 50vh;
+  /* height: 45% */
   align-content: center;
   justify-content: space-evenly;
   /* margin-top: 20px; */
   border: 2px solid black;
   padding: 20px 0px 20px 0px;
+}
+
+.graph-wrapper {
+  /* height: 45%; */
 }
 
 .card {
