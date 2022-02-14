@@ -78,6 +78,7 @@ h3 {
 .main-container {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .nav-wrapper {
@@ -88,6 +89,7 @@ h3 {
   align-items: center;
   padding: 0px 20px 0px 20px;
   border: 2px solid black;
+  height: 10%;
 }
 
 .rubiks-cube-image {
@@ -107,10 +109,12 @@ h3 {
   /* margin-top: 20px; */
   border: 2px solid black;
   padding: 20px 0px 20px 0px;
+  height: 45%;
 }
 
 .graph-wrapper {
   border: 2px solid yellow;
+  height: 45%;
 }
 
 .card {
@@ -120,6 +124,7 @@ h3 {
   border-radius: 28px;
   flex-direction: column;
   align-items: center;
+  box-shadow: 1px 1px 80px 1px #81abadab;
   /* font-size: 6vh; */
 }
 
