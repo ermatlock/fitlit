@@ -81,6 +81,12 @@ h3 {
 	font-size: 2vh;
 }
 
+ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .main-container {
 	display: flex;
 	flex-direction: column;
@@ -119,6 +125,8 @@ h3 {
 }
 
 .graph-wrapper {
+	display: flex;
+	flex-direction: row;
 	border: 2px solid yellow;
 	height: 45%;
 }
@@ -142,8 +150,21 @@ h3 {
 	background-color: #ff6d37;
 }
 
+.hydration-expanded {
+	width: 40%
+}
+
+.hydration-week {
+	display: flex;
+	flex-direction: row;
+}
+
 .sleep-card {
 	background-color: blueviolet;
+}
+
+.sleep-expanded {
+	width: 60%
 }
 
 .user-card {
