@@ -5,6 +5,8 @@ import "./images/run.svg";
 import "./images/sleep.svg";
 import "./images/droplet.png";
 import "./images/user.png";
+import "./images/waves.png"
+import "./images/sleeping.png"
 
 import UserRepository from "./UserRepository";
 import User from "./User";
@@ -117,18 +119,39 @@ const updateUserCard = () => {
 const updateHydrationCard = () => {
 	console.log(">>>updateHydrationCard");
 	dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
-	// weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
+	updateHydrationExpanded()
 };
+
+const updateHydrationExpanded = () => {
+	const hydration = currentHydration.getWeeksWater()
+	weeklyHydration.innerHTML = ''
+	return hydration.forEach((ounces, index) => {
+		weeklyHydration.innerHTML += `
+    <ul>
+      <h3>DAY ${index +1}</h3>
+      <h2>${ounces}</h2>
+      <h3>OZ</h3>
+    </ul>`
+	})
+	// weeklyHydration.innerHTML = `
+	// <ul><h2>Day 1: ${hydration[0]}</h2> Day 2: ${hydration[1]} Day 3: ${hydration[2]} ${hydration[3]} ${hydration[4]} ${hydration[5]} ${hydration[6]}`;
+}
+
+
 
 const updateSleepCard = () => {
 	// console.log(">>>updateSleepCard");
 	oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
 	oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
-	// oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
-	// oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
-	// allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
-	// allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+	updateSleepExpanded()
 };
+
+const updateSleepExpanded = () => {
+	oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
+	oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
+	allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
+	allTimeUserQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+}
 
 const updateActivityCard = () => {
 	console.log(currentActivity.getLastRecordedSteps());
