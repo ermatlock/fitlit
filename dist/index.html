@@ -47,17 +47,18 @@
           <p id="allTimeUserHourAvg">All Time User Sleep Hour Average</p>
           <p id="allTimeUserQualityAvg">All Time User Sleep Quality Avgerage</p> -->
         </article>
-        <article class="card user-card hidden">
+        <article class="card user-card">
           <img
             class="card-image"
             alt="User Image"
-            src="./images/sexual-activity.svg"
-          />
-          <p id="userName">User Name</p>
-          <p id="userAddress">Adress</p>
-          <p id="userEmail">Email Address</p>
-          <p id="userStrideLength">Stride Length</p>
-          <p id="compareStepGoal"></p>
+            src="./images/user.png"/>
+          <div class="user-text">
+            <p id="userName">User Name</p>
+            <p id="userAddress">Adress</p>
+            <p id="userEmail">Email Address</p>
+            <p id="userStrideLength">Stride Length</p>
+            <p id="compareStepGoal"></p>
+          </div>
           <div class="userFriends">
             <!-- list of friends here -->
           </div>
@@ -71,7 +72,5 @@
     </main>
     <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>
-    <script src="./src/ourCharts.js"></script>
-    <!-- <script type="text/javascript" src="./data/users.js"></script> -->
   </body>
 </html>
