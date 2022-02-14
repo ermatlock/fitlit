@@ -5,34 +5,40 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 * {
-  margin: 0;
+	margin: 0;
 }
+
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
+
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Oswald", sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Oswald", sans-serif;
 }
+
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
+
 input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
+
 p,
 h1,
 h2,
@@ -40,124 +46,132 @@ h3,
 h4,
 h5,
 h6 {
-  color: white;
-  overflow-wrap: break-word;
-  /* margin: 0px
+	color: white;
+	overflow-wrap: break-word;
+	/* margin: 0px
   padding: 0px */
 }
+
 #root,
 #__next {
-  isolation: isolate;
+	isolation: isolate;
 }
 
 body,
 html {
-  background-image: linear-gradient(
-    to top,
-    #070024 20%,
-    #32135a 64%,
-    #0c0132 100%
-  );
-  background-repeat: no-repeat;
-  height: 100%;
+	background-image: linear-gradient(to top,
+			#070024 20%,
+			#32135a 64%,
+			#0c0132 100%);
+	background-repeat: no-repeat;
+	height: 100%;
 }
-/*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 
+/*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
 h1 {
-  font-size: 6vh;
+	font-size: 6vh;
 }
 
 h2 {
-  font-size: 4vh;
+	font-size: 4vh;
 }
 
 h3 {
-  font-size: 2vh;
+	font-size: 2vh;
 }
+
 .main-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .nav-wrapper {
-  /* height: 10% */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px 0px 20px;
-  border: 2px solid black;
-  height: 10%;
+	/* height: 10% */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 20px 0px 20px;
+	border: 2px solid black;
+	height: 10%;
 }
 
 .rubiks-cube-image {
-  height: 3vh;
+	height: 3vh;
 }
 
 .welcome-user {
-  font-size: 8vh;
+	font-size: 8vh;
 }
 
 .card-wrapper {
-  display: flex;
-  flex-direction: row;
-  /* height: 45% */
-  align-content: center;
-  justify-content: space-evenly;
-  /* margin-top: 20px; */
-  border: 2px solid black;
-  padding: 20px 0px 20px 0px;
-  height: 45%;
+	display: flex;
+	flex-direction: row;
+	/* height: 45% */
+	align-content: center;
+	justify-content: space-evenly;
+	/* margin-top: 20px; */
+	border: 2px solid black;
+	padding: 20px 0px 20px 0px;
+	height: 45%;
 }
 
 .graph-wrapper {
-  border: 2px solid yellow;
-  height: 45%;
+	border: 2px solid yellow;
+	height: 45%;
 }
 
 .card {
-  display: flex;
-  width: 21vw;
-  border: 2px solid #ffffff82;
-  border-radius: 28px;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 1px 1px 80px 1px #81abadab;
-  /* font-size: 6vh; */
+	display: flex;
+	width: 21vw;
+	border: 2px solid #ffffff82;
+	border-radius: 28px;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 1px 1px 80px 1px #81abadab;
+	/* font-size: 6vh; */
 }
 
 .activity-card {
-  background-color: #71c4ff;
+	background-color: #71c4ff;
 }
+
 .hydration-card {
-  background-color: #ff6d37;
+	background-color: #ff6d37;
 }
 
 .sleep-card {
-  background-color: blueviolet;
+	background-color: blueviolet;
 }
 
 .user-card {
-  background-color: #e91e63;
+	background-color: #e91e63;
+}
+
+.user-text {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 10px 20px 10px 20px;
 }
 
 .card-image {
-  margin: 4%;
-  height: 12vh;
+	margin: 4%;
+	height: 12vh;
 }
 
 .water-image {
-  fill: #414040;
+	fill: #414040;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 #myChart {
-  height: 100%;
-  width: 30%;
-  border: solid yellow;
+	height: 100%;
+	width: 30%;
+	border: solid yellow;
 }
