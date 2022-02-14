@@ -3,7 +3,7 @@ import "./images/turing-logo.png";
 import "./images/menu-dots.svg";
 import "./images/run.svg";
 import "./images/sleep.svg";
-import "./images/droplet-gradient.svg";
+import "./images/droplet.png";
 // import userData from "./data/users";
 import UserRepository from "./UserRepository";
 import User from "./User";
@@ -98,8 +98,8 @@ const promiseAll = () => {
     instantiateActivity(id, apiActivityData);
     updateActivityCard();
 
+    chart1(myChart, data[0])
   });
-  chart1(myChart, data[0])
   // .catch((error) => console.log(error));
   // //^^make a modal for error message
 };

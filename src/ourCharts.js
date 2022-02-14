@@ -5,7 +5,8 @@ export {chart1}
 
 const chart1 = (location, data) => {
   const chart = new Chart (location, {
-
+  type: 'line',
+  data: {
    labels: labels,
    datasets: [{
      label: 'My First dataset',
@@ -13,7 +14,13 @@ const chart1 = (location, data) => {
      borderColor: 'rgb(255, 99, 132)',
      data: [0, 10, 5, 2, 20, 30, 45],
    }]
-
-
-})
+  },
+  options: {
+      scales: {
+            y: {
+              beginAtZero: true
+            }
+      }
+  }
+  })
 }

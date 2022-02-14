@@ -155,3 +155,9 @@ h3 {
 .hidden {
   display: none;
 }
+
+#myChart {
+  height: 100%;
+  width: 30%;
+  border: solid yellow;
+}
