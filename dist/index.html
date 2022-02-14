@@ -33,8 +33,6 @@
           <!-- <div id="foo" data-date="01/25/2020"></div> -->
           <h1 id="dailyHydration"></h1>
           <h3>OZ</h3>
-
-          <!-- <p id="weeklyHydration"></p> -->
         </article>
         <article class="card sleep-card">
           <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
@@ -42,10 +40,6 @@
           <h1 id="oneNightsHours"></h1>
           <h3>SLEEP QUALITY</h3>
           <h1 id="oneNightsQuality"></h1>
-          <!-- <p id="oneWeeksHours">Weekly Sleep</p>
-          <p id="oneWeeksQuality">Weekly Sleep Quality</p>
-          <p id="allTimeUserHourAvg">All Time User Sleep Hour Average</p>
-          <p id="allTimeUserQualityAvg">All Time User Sleep Quality Avgerage</p> -->
         </article>
         <article class="card user-card">
           <img
@@ -65,9 +59,19 @@
         </article>
       </section>
       <section class="graph-wrapper">
-        <div>
-          <canvas id="myChart"></canvas>
-        </div>
+        <article class="hydration-expanded card">
+          <img class="card-image" src="./images/waves.png" alt="waves">
+          <h3>WEEKLY HYDRATION</h3>
+          <div class="hydration-week" id="weeklyHydration">
+          </div>
+        </article>
+        <article class="sleep-expanded card">
+          <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon">
+          <p id="oneWeeksHours">Weekly Sleep</p>
+          <p id="oneWeeksQuality">Weekly Sleep Quality</p>
+          <p id="allTimeUserHourAvg">All Time User Sleep Hour Average</p>
+          <p id="allTimeUserQualityAvg">All Time User Sleep Quality Avgerage</p>
+        </article>
       </section>
     </main>
     <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
