@@ -54,6 +54,9 @@ To get a local copy up and running follow these simple steps.
 # Code Architecture 
 If you want to know more about our code architecture, [click here](https://gist.github.com/Ekaiman/f0c6022e295921a810e7531a4d38f9b0).
 
+# Challenges and Wins
+A challenge and win in this project was learning how to use API fetch calls and drilling into the data to get the information we need. An ongoing challenge is chart.js a dependecy where userrs data will be displayed on a line graph for easier viewing.
+
 # Future Additions
 - User receives randomized activity prompt to encourage good habits.
 - User interation, ability to pick a date
