@@ -43,8 +43,8 @@ const oneNightsHours = document.getElementById("oneNightsHours");
 const oneNightsQuality = document.getElementById("oneNightsQuality");
 const oneWeeksHours = document.getElementById("oneWeeksHours");
 const oneWeeksQuality = document.getElementById("oneWeeksQuality");
-const allTimeUserHourAvg = document.getElementById("allTimeUserHourAvg");
-const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
+const allTimeAvg = document.getElementById("allTimeAvg");
+// const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
 const todaySteps = document.getElementById("todaySteps");
 
 const getRandomIndex = (array) => {
@@ -133,24 +133,39 @@ const updateHydrationExpanded = () => {
       <h3>OZ</h3>
     </ul>`
 	})
-	// weeklyHydration.innerHTML = `
-	// <ul><h2>Day 1: ${hydration[0]}</h2> Day 2: ${hydration[1]} Day 3: ${hydration[2]} ${hydration[3]} ${hydration[4]} ${hydration[5]} ${hydration[6]}`;
 }
 
 
 
 const updateSleepCard = () => {
-	// console.log(">>>updateSleepCard");
 	oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
 	oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
 	updateSleepExpanded()
 };
 
 const updateSleepExpanded = () => {
-	oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
-	oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
-	allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
-	allTimeUserQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+	const weeksSleep = currentSleep.getWeeklyHoursSlept()
+	const weeksQuality = currentSleep.getWeeklySleepQuality()
+	// oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
+	// oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
+	allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
+	// oneWeeksHours.innerHTML = ''
+	weeksSleep.forEach((hours, index) => {
+		oneWeeksHours.innerHTML += `
+    <ul>
+      <h3>DAY ${index +1}</h3>
+      <h2>${hours}</h2>
+    </ul>`
+	})
+	// oneWeeksQuality.innerHTML = ''
+	weeksQuality.forEach((quality, index) => {
+		oneWeeksQuality.innerHTML += `
+      <ul>
+        <h3>DAY ${index +1}</h3>
+        <h2>${quality}</h2>
+      </ul>`
+	})
+
 }
 
 const updateActivityCard = () => {
