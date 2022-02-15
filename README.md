@@ -27,7 +27,8 @@ Fitlit is a web application that displays a dashboard of user information from s
 - Javascript
 - HTML
 - CSS
-- Mochas/Chai
+- Mocha/Chai
+- Webpack
 
 # Getting Started
 To get a local copy up and running follow these simple steps.
@@ -49,7 +50,12 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm test
    ```
-
+## View Site
+1. In your terminal, to start the server
+   ```sh
+   npm start
+   ```
+2. Project will run at http://localhost:8080/   
 
 # Code Architecture 
 If you want to know more about our code architecture, [click here](https://gist.github.com/Ekaiman/f0c6022e295921a810e7531a4d38f9b0).
