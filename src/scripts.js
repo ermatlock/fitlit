@@ -20,9 +20,6 @@ import {
 	fetchHydrationData,
 } from "./apiCalls.js";
 
-// let apiUserData;
-// let apiHydrationData;
-// let apiSleepData;
 let currentUserRepository;
 let currentUser;
 let currentHydration;
@@ -44,7 +41,6 @@ const oneNightsQuality = document.getElementById("oneNightsQuality");
 const oneWeeksHours = document.getElementById("oneWeeksHours");
 const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeAvg = document.getElementById("allTimeAvg");
-// const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
 const todaySteps = document.getElementById("todaySteps");
 
 const getRandomIndex = (array) => {
@@ -93,11 +89,7 @@ const promiseAll = () => {
 		updateSleepCard();
 		instantiateActivity(id, apiActivityData);
 		updateActivityCard();
-
-		// chart1(myChart, data[0])
 	});
-	// .catch((error) => console.log(error));
-	// //^^make a modal for error message
 };
 
 const greetUser = () => {
@@ -113,7 +105,6 @@ const updateUserCard = () => {
 	compareStepGoal.innerText = `You: ${
     currentUser.dailyStepGoal
   }. Average: ${currentUserRepository.returnStepGoal()}.`;
-	// userFriends.innerText = currentUser.friends;
 };
 
 const updateHydrationCard = () => {
@@ -146,10 +137,7 @@ const updateSleepCard = () => {
 const updateSleepExpanded = () => {
 	const weeksSleep = currentSleep.getWeeklyHoursSlept()
 	const weeksQuality = currentSleep.getWeeklySleepQuality()
-	// oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
-	// oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
 	allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
-	// oneWeeksHours.innerHTML = ''
 	weeksSleep.forEach((hours, index) => {
 		oneWeeksHours.innerHTML += `
     <ul>
@@ -157,7 +145,6 @@ const updateSleepExpanded = () => {
       <h2>${hours}</h2>
     </ul>`
 	})
-	// oneWeeksQuality.innerHTML = ''
 	weeksQuality.forEach((quality, index) => {
 		oneWeeksQuality.innerHTML += `
       <ul>

@@ -13,9 +13,7 @@
 }
 
 html,
-body {
-	/* height: 100%; */
-}
+body {}
 
 body {
 	line-height: 1.5;
@@ -48,8 +46,6 @@ h5,
 h6 {
 	color: white;
 	overflow-wrap: break-word;
-	/* margin: 0px
-  padding: 0px */
 }
 
 #root,
@@ -114,16 +110,12 @@ ul {
 	flex-direction: row;
 	align-content: center;
 	justify-content: space-evenly;
-	/* margin-top: 20px; */
-	/* border: 2px solid black; */
 	padding: 20px 0px 20px 0px;
 }
 
 .graph-wrapper {
 	display: flex;
 	flex-direction: row;
-	/* border: 2px solid yellow; */
-	/* height: 45%; */
 	justify-content: space-around;
 }
 
@@ -135,7 +127,6 @@ ul {
 	flex-direction: column;
 	align-items: center;
 	box-shadow: 1px 1px 80px 1px #81abadab;
-	/* font-size: 6vh; */
 }
 
 .activity-card {
