@@ -15,7 +15,6 @@
     <main class="main-container">
       <nav class="nav-wrapper">
         <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
-        <!-- <img class="rubiks-cube-image" alt="Drop Down Menu" src="./images/menu-dots.svg"></img> -->
       </nav>
       <section class="card-wrapper">
         <article class="card activity-card">
@@ -29,12 +28,9 @@
             alt="Water Image"
             src="./images/droplet.png"
           />
-          <!-- <input type="text" name="foo"> -->
-          <!-- <div id="foo" data-date="01/25/2020"></div> -->
+
           <h1 id="dailyHydration"></h1>
           <h3>OZ</h3>
-
-          <!-- <p id="weeklyHydration"></p> -->
         </article>
         <article class="card sleep-card">
           <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
@@ -42,36 +38,43 @@
           <h1 id="oneNightsHours"></h1>
           <h3>SLEEP QUALITY</h3>
           <h1 id="oneNightsQuality"></h1>
-          <!-- <p id="oneWeeksHours">Weekly Sleep</p>
-          <p id="oneWeeksQuality">Weekly Sleep Quality</p>
-          <p id="allTimeUserHourAvg">All Time User Sleep Hour Average</p>
-          <p id="allTimeUserQualityAvg">All Time User Sleep Quality Avgerage</p> -->
         </article>
-        <article class="card user-card hidden">
+        <article class="card user-card">
           <img
             class="card-image"
             alt="User Image"
-            src="./images/sexual-activity.svg"
-          />
-          <p id="userName">User Name</p>
-          <p id="userAddress">Adress</p>
-          <p id="userEmail">Email Address</p>
-          <p id="userStrideLength">Stride Length</p>
-          <p id="compareStepGoal"></p>
-          <div class="userFriends">
-            <!-- list of friends here -->
+            src="./images/user.png"/>
+          <div class="user-text">
+            <p id="userName">User Name</p>
+            <p id="userAddress">Adress</p>
+            <p id="userEmail">Email Address</p>
+            <p id="userStrideLength">Stride Length</p>
+            <p id="compareStepGoal"></p>
           </div>
         </article>
       </section>
       <section class="graph-wrapper">
-        <div>
-          <canvas id="myChart"></canvas>
-        </div>
+        <article class="card expanded">
+          <img class="card-image" src="./images/waves.png" alt="waves">
+          <h3>WEEKLY HYDRATION</h3>
+          <div class="week" id="weeklyHydration">
+            <!-- add dynamic data here -->
+          </div>
+        </article>
+        <article class="card expanded">
+          <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon">
+          <p>WEEKLY SLEEP HOURS</p>
+          <div class="week" id="oneWeeksHours">
+            <!-- add dynamic data here -->
+          </div>
+          <p>WEEKLY SLEEP QUALITY</p>
+          <div class="week" id="oneWeeksQuality">
+            <!-- add dynamic data here -->
+          </div>
+          <p id="allTimeAvg">All Time User Average</p>
+        </article>
       </section>
     </main>
-    <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>
-    <script src="./src/ourCharts.js"></script>
-    <!-- <script type="text/javascript" src="./data/users.js"></script> -->
   </body>
 </html>

@@ -4,24 +4,22 @@ import "./images/menu-dots.svg";
 import "./images/run.svg";
 import "./images/sleep.svg";
 import "./images/droplet.png";
-// import userData from "./data/users";
+import "./images/user.png";
+import "./images/waves.png"
+import "./images/sleeping.png"
+
 import UserRepository from "./UserRepository";
 import User from "./User";
 import Hydration from "./Hydration";
 import Sleep from "./Sleep";
 import Activity from "./Activity";
 import {
-  fetchUserData,
-  fetchSleepData,
-  fetchActivityData,
-  fetchHydrationData,
+	fetchUserData,
+	fetchSleepData,
+	fetchActivityData,
+	fetchHydrationData,
 } from "./apiCalls.js";
-import { Datepicker } from "vanillajs-datepicker";
-// import {chart1} from "./ourCharts.js"
 
-// let apiUserData;
-// let apiHydrationData;
-// let apiSleepData;
 let currentUserRepository;
 let currentUser;
 let currentHydration;
@@ -42,107 +40,128 @@ const oneNightsHours = document.getElementById("oneNightsHours");
 const oneNightsQuality = document.getElementById("oneNightsQuality");
 const oneWeeksHours = document.getElementById("oneWeeksHours");
 const oneWeeksQuality = document.getElementById("oneWeeksQuality");
-const allTimeUserHourAvg = document.getElementById("allTimeUserHourAvg");
-const allTimeUserQualityAvg = document.getElementById("allTimeUserQualityAvg");
+const allTimeAvg = document.getElementById("allTimeAvg");
 const todaySteps = document.getElementById("todaySteps");
 
-// const elem = document.getElementById("foo");
-
-// const datePicker = new Datepicker(elem, {});
-
 const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length);
+	return Math.floor(Math.random() * array.length);
 };
 
 const instantiateUserRepository = (data) => {
-  currentUserRepository = new UserRepository(data);
+	currentUserRepository = new UserRepository(data);
 };
 
 const instantiateUser = (id) => {
-  currentUser = currentUserRepository.createUser(id);
+	currentUser = currentUserRepository.createUser(id);
 };
 
 const instantiateHydration = (id, apiData) => {
-  currentHydration = new Hydration(id, apiData);
+	currentHydration = new Hydration(id, apiData);
 };
 
 const instantiateSleep = (id, sleepData) => {
-  currentSleep = new Sleep(id, sleepData);
+	currentSleep = new Sleep(id, sleepData);
 };
 
 const instantiateActivity = (id, activityData) => {
-  currentActivity = new Activity(id, activityData);
+	currentActivity = new Activity(id, activityData);
 };
 
 const promiseAll = () => {
-  Promise.all([
-    fetchUserData(),
-    fetchSleepData(),
-    fetchActivityData(),
-    fetchHydrationData(),
-  ]).then((data) => {
-    const apiUserData = data[0].userData;
-    const apiSleepData = data[1].sleepData;
-    const apiActivityData = data[2].activityData;
-    const apiHydrationData = data[3].hydrationData;
-    // const myChart = document.getElementById("myChart").getContext('2d')
-    const id = getRandomIndex(apiUserData);
-    instantiateUserRepository(apiUserData);
-    instantiateUser(id);
-    greetUser();
-    // updateUserCard();
-    instantiateHydration(id, apiHydrationData);
-    updateHydrationCard();
-    instantiateSleep(id, apiSleepData);
-    updateSleepCard();
-    instantiateActivity(id, apiActivityData);
-    updateActivityCard();
-
-    // chart1(myChart, data[0])
-  });
-  // .catch((error) => console.log(error));
-  // //^^make a modal for error message
+	Promise.all([
+		fetchUserData(),
+		fetchSleepData(),
+		fetchActivityData(),
+		fetchHydrationData(),
+	]).then((data) => {
+		const apiUserData = data[0].userData;
+		const apiSleepData = data[1].sleepData;
+		const apiActivityData = data[2].activityData;
+		const apiHydrationData = data[3].hydrationData;
+		const id = getRandomIndex(apiUserData);
+		instantiateUserRepository(apiUserData);
+		instantiateUser(id);
+		greetUser();
+		updateUserCard();
+		instantiateHydration(id, apiHydrationData);
+		updateHydrationCard();
+		instantiateSleep(id, apiSleepData);
+		updateSleepCard();
+		instantiateActivity(id, apiActivityData);
+		updateActivityCard();
+	});
 };
 
 const greetUser = () => {
-  welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
+	welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
 };
 
 const updateUserCard = () => {
-  console.log(">>>updateUserCard");
-  userName.innerText = currentUser.getFirstName();
-  userAddress.innerText = currentUser.address;
-  userEmail.innerText = currentUser.email;
-  userStrideLength.innerText = currentUser.strideLength;
-  compareStepGoal.innerText = `You: ${
+	console.log(">>>updateUserCard");
+	userName.innerText = currentUser.getFirstName();
+	userAddress.innerText = currentUser.address;
+	userEmail.innerText = currentUser.email;
+	userStrideLength.innerText = currentUser.strideLength;
+	compareStepGoal.innerText = `You: ${
     currentUser.dailyStepGoal
   }. Average: ${currentUserRepository.returnStepGoal()}.`;
-  // userFriends.innerText = currentUser.friends;
 };
 
 const updateHydrationCard = () => {
-  console.log(">>>updateHydrationCard");
-  dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
-  // weeklyHydration.innerText = `${currentHydration.getWeeksWater()}`;
+	console.log(">>>updateHydrationCard");
+	dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
+	updateHydrationExpanded()
 };
+
+const updateHydrationExpanded = () => {
+	const hydration = currentHydration.getWeeksWater()
+	weeklyHydration.innerHTML = ''
+	return hydration.forEach((ounces, index) => {
+		weeklyHydration.innerHTML += `
+    <ul>
+      <h3>DAY ${index +1}</h3>
+      <h2>${ounces}</h2>
+      <h3>OZ</h3>
+    </ul>`
+	})
+}
+
+
 
 const updateSleepCard = () => {
-  // console.log(">>>updateSleepCard");
-  oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
-  oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
-  // oneWeeksHours.innerText = `One Week: ${currentSleep.getWeeklyHoursSlept()}`;
-  // oneWeeksQuality.innerText = `One Week Quality: ${currentSleep.getWeeklySleepQuality()}`;
-  // allTimeUserHourAvg.innerText = `All Time Hours Average: ${currentSleep.getAverageSleepHours()}`;
-  // allTimeUserSleepQualityAvg.innerText = `All Time Quality Average: ${currentSleep.getAverageSleepQuality()}`;
+	oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
+	oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
+	updateSleepExpanded()
 };
 
+const updateSleepExpanded = () => {
+	const weeksSleep = currentSleep.getWeeklyHoursSlept()
+	const weeksQuality = currentSleep.getWeeklySleepQuality()
+	allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
+	weeksSleep.forEach((hours, index) => {
+		oneWeeksHours.innerHTML += `
+    <ul>
+      <h3>DAY ${index +1}</h3>
+      <h2>${hours}</h2>
+    </ul>`
+	})
+	weeksQuality.forEach((quality, index) => {
+		oneWeeksQuality.innerHTML += `
+      <ul>
+        <h3>DAY ${index +1}</h3>
+        <h2>${quality}</h2>
+      </ul>`
+	})
+
+}
+
 const updateActivityCard = () => {
-  console.log(currentActivity.getLastRecordedSteps());
-  todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
+	console.log(currentActivity.getLastRecordedSteps());
+	todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
 };
 
 const loadPage = () => {
-  promiseAll();
+	promiseAll();
 };
 
 window.onload = loadPage;
