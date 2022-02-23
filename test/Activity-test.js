@@ -1,15 +1,48 @@
 import { expect } from "chai";
 import UserRepository from "../src/UserRepository";
 import User from "../src/User";
-import Hydration from "../src/Hydration";
-import Sleep from "../src/Sleep";
+// import Hydration from "../src/Hydration";
+// import Sleep from "../src/Sleep";
 import Activity from "../src/Activity";
 
 describe("Activity", () => {
-  let activity;
+  let activity1;
   let activityData;
+  let userDataSet;
+  let userRepository1;
+  let user1;
+  let user1Stride;
 
   beforeEach(() => {
+    userDataSet = [
+      {
+        id: 1,
+        name: "Luisa Hane",
+        address: "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
+        email: "Diana.Hayes1@hotmail.com",
+        strideLength: 4.3,
+        dailyStepGoal: 10000,
+        friends: [16, 4, 8],
+      },
+      {
+        id: 2,
+        name: "Jarvis Considine",
+        address: "30086 Kathryn Port, Ciceroland NE 07273",
+        email: "Dimitri.Bechtelar11@gmail.com",
+        strideLength: 4.5,
+        dailyStepGoal: 5000,
+        friends: [9, 18, 24, 19],
+      },
+      {
+        id: 3,
+        name: "Herminia Witting",
+        address: "85823 Bosco Fork, East Oscarstad MI 85126-5660",
+        email: "Elwin.Tromp@yahoo.com",
+        strideLength: 4.4,
+        dailyStepGoal: 5000,
+        friends: [19, 11, 42, 33],
+      },
+    ]
     activityData = [
       {
         userID: 1,
@@ -202,27 +235,35 @@ describe("Activity", () => {
       },
     ];
 
-    activity = new Activity(1, activityData);
+    activity1 = new Activity(1, activityData);
+    userRepository1 = new UserRepository(userDataSet)
+    user1 = userRepository1.createUser(1)
+    user1Stride = user1.strideLength
   });
 
   it("should be a function", () => {
     expect(Activity).to.be.a("function");
   });
 
-  it("should be an instance of hydration", () => {
-    expect(activity).to.be.an.instanceOf(Activity);
+  it("should be an instance of Activity", () => {
+    expect(activity1).to.be.an.instanceOf(Activity);
   });
 
   it("should accept a User and take the id", () => {
-    expect(activity.userId).to.equal(1);
+    expect(activity1.userId).to.equal(1);
   });
 
   it("should accept activity API data", () => {
     let userOneData = activityData.filter((user) => user.userID === 1);
-    expect(activity.activityData).to.eql(userOneData);
+    expect(activity1.activityData).to.eql(userOneData);
   });
 
   it("should return most recent recorded number of steps for a user", () => {
-    expect(activity.getLastRecordedSteps()).to.equal(13928);
+    expect(activity1.getLastRecordedSteps()).to.equal(13928);
   });
+
+
+  it("should calculate and return miles user has walked for a specific day", () => {
+    expect(activity1.calculateMilesWalked(user1)).to.equal('11.34')
+  })
 });
