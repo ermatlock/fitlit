@@ -40,6 +40,13 @@ class Activity {
       return false
     }
   }
+
+  exceededStepGoal(userClass) {
+    let daysExceed = this.activityData.filter(day => {
+      return userClass.dailyStepGoal < day.numSteps
+    }).map(day => day.date)
+    return daysExceed
+  }
 }
 
 export default Activity;

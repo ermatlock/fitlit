@@ -278,4 +278,8 @@ describe("Activity", () => {
     expect(activity1.isStepGoalAchieved(user1)).to.equal(true)
   })
 
+  it("should return list of dates that they exceeded their step goal", () => {
+    expect(activity1.exceededStepGoal(user1)).to.eql(["2019/06/17", "2019/06/20", "2019/06/22", "2019/06/23"])
+  })
+
 });
