@@ -262,8 +262,18 @@ describe("Activity", () => {
     expect(activity1.getLastRecordedSteps()).to.equal(13928);
   });
 
-
   it("should calculate and return miles user has walked for a specific day", () => {
     expect(activity1.calculateMilesWalked(user1)).to.equal('11.34')
   })
+
+  it("should return how many minutes they were active", () => {
+    expect(activity1.getMinutesActive()).to.equal(218)
+  })
+
+  it("should show avergae of minutes active for last recorded week", () => {
+    expect(activity1.calculateWeeksAvg()).to.equal('174.29')
+  })
+
+  it("should")
+
 });
