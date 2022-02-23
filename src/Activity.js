@@ -47,6 +47,11 @@ class Activity {
     }).map(day => day.date)
     return daysExceed
   }
+
+  getMostStairsClimbed() {
+    return this.activityData.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs)[0].flightsOfStairs
+
+  }
 }
 
 export default Activity;

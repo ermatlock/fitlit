@@ -282,4 +282,8 @@ describe("Activity", () => {
     expect(activity1.exceededStepGoal(user1)).to.eql(["2019/06/17", "2019/06/20", "2019/06/22", "2019/06/23"])
   })
 
+  it("should find the most stairs theyve ever climbed", () => {
+    expect(activity1.getMostStairsClimbed()).to.equal(36)
+  })
+
 });
