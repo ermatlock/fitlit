@@ -286,4 +286,11 @@ describe("Activity", () => {
     expect(activity1.getMostStairsClimbed()).to.equal(36)
   })
 
+  it("should be able to store all users activity data", () => {
+    expect(activity1.allUsersActivityData).to.eql(activityData)
+  })
+
+  it("should return all users average for stairs climbed, steps taken, minutes active", () => {
+    expect(activity1.getAllUserAvg()).to.eql({ stepsAvg: 7862, minutesAvg: 160, stairsAvg: 19 })
+  })
 });
