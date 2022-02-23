@@ -32,6 +32,14 @@ class Activity {
     }, 0)
     return (totalWeekMinutes/7).toFixed(2)
   }
+
+  isStepGoalAchieved(userClass){
+    if (userClass.dailyStepGoal < this.getLastRecordedSteps()){
+      return true
+    } else {
+      return false
+    }
+  }
 }
 
 export default Activity;

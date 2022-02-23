@@ -274,6 +274,8 @@ describe("Activity", () => {
     expect(activity1.calculateWeeksAvg()).to.equal('174.29')
   })
 
-  it("should")
+  it("should return if they achieved their step goal for the day", () => {
+    expect(activity1.isStepGoalAchieved(user1)).to.equal(true)
+  })
 
 });
