@@ -43,6 +43,7 @@ const oneWeeksHours = document.getElementById("oneWeeksHours");
 const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeAvg = document.getElementById("allTimeAvg");
 const todaySteps = document.getElementById("todaySteps");
+const milesWalked = document.getElementById("milesWalked");
 
 const getRandomIndex = (array) => {
 	return Math.floor(Math.random() * array.length);
@@ -86,10 +87,12 @@ const promiseAll = () => {
 		domUpdates.updateUserCard(currentUser, currentUserRepository);
 		instantiateHydration(id, apiHydrationData);
 		domUpdates.updateHydrationCard(currentHydration);
+		domUpdates.updateHydrationExpanded(currentHydration);
 		instantiateSleep(id, apiSleepData);
 		domUpdates.updateSleepCard(currentSleep);
+		domUpdates.updateSleepExpanded(currentSleep);
 		instantiateActivity(id, apiActivityData);
-		domUpdates.updateActivityCard(currentActivity);
+		domUpdates.updateActivityCard(currentActivity, apiUserData);
 	});
 };
 
