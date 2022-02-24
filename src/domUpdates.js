@@ -55,8 +55,9 @@ let domUpdates = {
     })
   },
 
-  updateActivityCard(currentActivity) {
+  updateActivityCard(currentActivity, apiUserData) {
     todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
+    milesWalked.innerText = `${currentActivity.calculateMilesWalked(apiUserData)}`;
   }
 };
 
