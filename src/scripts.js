@@ -19,6 +19,7 @@ import {
 	fetchActivityData,
 	fetchHydrationData,
 } from "./apiCalls.js";
+import domUpdates from "./domUpdates";
 
 let currentUserRepository;
 let currentUser;
@@ -81,14 +82,14 @@ const promiseAll = () => {
 		const id = getRandomIndex(apiUserData);
 		instantiateUserRepository(apiUserData);
 		instantiateUser(id);
-		greetUser();
-		updateUserCard();
+		domUpdates.greetUser(currentUser);
+		domUpdates.updateUserCard(currentUser, currentUserRepository);
 		instantiateHydration(id, apiHydrationData);
-		updateHydrationCard();
+		domUpdates.updateHydrationCard(currentHydration);
 		instantiateSleep(id, apiSleepData);
-		updateSleepCard();
+		domUpdates.updateSleepCard(currentSleep);
 		instantiateActivity(id, apiActivityData);
-		updateActivityCard();
+		domUpdates.updateActivityCard(currentActivity);
 	});
 };
 
