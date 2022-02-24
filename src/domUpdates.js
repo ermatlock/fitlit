@@ -15,7 +15,6 @@ let domUpdates = {
 
   updateHydrationCard(currentHydration) {
     dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
-    updateHydrationExpanded(currentHydration)
   },
 
   updateHydrationExpanded(currentHydration) {
@@ -34,7 +33,6 @@ let domUpdates = {
   updateSleepCard(currentSleep) {
     oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
     oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
-    updateSleepExpanded(currentSleep)
   },
 
   updateSleepExpanded(currentSleep) {
