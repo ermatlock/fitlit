@@ -1,10 +1,9 @@
 let domUpdates = {
-  greetUser = () => {
-    welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
-  };
+  greetUser(currentUser) {
+    welcome.innerText = `Welcome, ${currentUser.getFirstName()}`
+  },
 
-  const updateUserCard = () => {
-    console.log(">>>updateUserCard");
+  updateUserCard(currentUser, currentUserRepository) {
     userName.innerText = currentUser.getFirstName();
     userAddress.innerText = currentUser.address;
     userEmail.innerText = currentUser.email;
@@ -12,15 +11,14 @@ let domUpdates = {
     compareStepGoal.innerText = `You: ${
       currentUser.dailyStepGoal
     }. Average: ${currentUserRepository.returnStepGoal()}.`;
-  };
+  },
 
-  const updateHydrationCard = () => {
-    console.log(">>>updateHydrationCard");
+  updateHydrationCard(currentHydration) {
     dailyHydration.innerText = `${currentHydration.findOzByLast()}`;
-    updateHydrationExpanded()
-  };
+    updateHydrationExpanded(currentHydration)
+  },
 
-  const updateHydrationExpanded = () => {
+  updateHydrationExpanded(currentHydration) {
     const hydration = currentHydration.getWeeksWater()
     weeklyHydration.innerHTML = ''
     return hydration.forEach((ounces, index) => {
@@ -31,15 +29,15 @@ let domUpdates = {
         <h3>OZ</h3>
       </ul>`
     })
-  };
+  },
 
-  const updateSleepCard = () => {
+  updateSleepCard(currentSleep) {
     oneNightsHours.innerText = `${currentSleep.getSleepHoursByDate()}`;
     oneNightsQuality.innerText = `${currentSleep.getSleepQualityByDate()}`;
-    updateSleepExpanded()
-  };
+    updateSleepExpanded(currentSleep)
+  },
 
-  const updateSleepExpanded = () => {
+  updateSleepExpanded(currentSleep) {
     const weeksSleep = currentSleep.getWeeklyHoursSlept()
     const weeksQuality = currentSleep.getWeeklySleepQuality()
     allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
@@ -57,22 +55,12 @@ let domUpdates = {
           <h2>${quality}</h2>
         </ul>`
     })
+  },
 
-  }
-
-  const updateActivityCard = () => {
-    console.log(currentActivity.getLastRecordedSteps());
+  updateActivityCard(currentActivity) {
     todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
-  };
-
-}
-
-
-
-
-
-
-
+  }
+};
 
 
 export default domUpdates;
