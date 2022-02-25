@@ -70,7 +70,7 @@ let domUpdates = {
     )}`;
   },
 
-  updateActivityExpanded() {},
+  // updateActivityExpanded() {},
 };
 
 export default domUpdates;
