@@ -27,6 +27,22 @@ const fetchHydrationData = () => {
 };
 
 
+//~~~~~~ POST ~~~~~~~
+
+const postHydration = (id, date, numOunces) => {
+  return fetch("http://localhost:3001/api/v1/hydration", {
+    method: "POST",
+    body: JSON.stringify({
+      userID: id,
+      date: date,
+      numOunces: numOunces
+    }),
+    headers: {'Content-Type': 'application/json'}
+  )
+};
+
+
+
 export {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
 
 // export defualt {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
