@@ -5,8 +5,8 @@ import "./images/run.svg";
 import "./images/sleep.svg";
 import "./images/droplet.png";
 import "./images/user.png";
-import "./images/waves.png"
-import "./images/sleeping.png"
+import "./images/waves.png";
+import "./images/sleeping.png";
 
 import UserRepository from "./UserRepository";
 import User from "./User";
@@ -14,11 +14,12 @@ import Hydration from "./Hydration";
 import Sleep from "./Sleep";
 import Activity from "./Activity";
 import {
-	fetchUserData,
-	fetchSleepData,
-	fetchActivityData,
-	fetchHydrationData,
+  fetchUserData,
+  fetchSleepData,
+  fetchActivityData,
+  fetchHydrationData,
 } from "./apiCalls.js";
+import { updateHydrationChart, updateSleepChart } from "./ourCharts";
 import domUpdates from "./domUpdates";
 
 let currentUserRepository;
@@ -46,54 +47,55 @@ const todaySteps = document.getElementById("todaySteps");
 const milesWalked = document.getElementById("milesWalked");
 
 const getRandomIndex = (array) => {
-	return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);
 };
 
 const instantiateUserRepository = (data) => {
-	currentUserRepository = new UserRepository(data);
+  currentUserRepository = new UserRepository(data);
 };
 
 const instantiateUser = (id) => {
-	currentUser = currentUserRepository.createUser(id);
+  currentUser = currentUserRepository.createUser(id);
 };
 
 const instantiateHydration = (id, apiData) => {
-	currentHydration = new Hydration(id, apiData);
+  currentHydration = new Hydration(id, apiData);
 };
 
 const instantiateSleep = (id, sleepData) => {
-	currentSleep = new Sleep(id, sleepData);
+  currentSleep = new Sleep(id, sleepData);
 };
 
 const instantiateActivity = (id, activityData) => {
-	currentActivity = new Activity(id, activityData);
+  currentActivity = new Activity(id, activityData);
 };
 
 const promiseAll = () => {
-	Promise.all([
-		fetchUserData(),
-		fetchSleepData(),
-		fetchActivityData(),
-		fetchHydrationData(),
-	]).then((data) => {
-		const apiUserData = data[0].userData;
-		const apiSleepData = data[1].sleepData;
-		const apiActivityData = data[2].activityData;
-		const apiHydrationData = data[3].hydrationData;
-		const id = getRandomIndex(apiUserData);
-		instantiateUserRepository(apiUserData);
-		instantiateUser(id);
-		domUpdates.greetUser(currentUser);
-		domUpdates.updateUserCard(currentUser, currentUserRepository);
-		instantiateHydration(id, apiHydrationData);
-		domUpdates.updateHydrationCard(currentHydration);
-		domUpdates.updateHydrationExpanded(currentHydration);
-		instantiateSleep(id, apiSleepData);
-		domUpdates.updateSleepCard(currentSleep);
-		domUpdates.updateSleepExpanded(currentSleep);
-		instantiateActivity(id, apiActivityData);
-		domUpdates.updateActivityCard(currentActivity, apiUserData);
-	});
+  Promise.all([
+    fetchUserData(),
+    fetchSleepData(),
+    fetchActivityData(),
+    fetchHydrationData(),
+  ]).then((data) => {
+    const apiUserData = data[0].userData;
+    const apiSleepData = data[1].sleepData;
+    const apiActivityData = data[2].activityData;
+    const apiHydrationData = data[3].hydrationData;
+    const id = getRandomIndex(apiUserData);
+    instantiateUserRepository(apiUserData);
+    instantiateUser(id);
+    domUpdates.greetUser(currentUser);
+    domUpdates.updateUserCard(currentUser, currentUserRepository);
+    instantiateHydration(id, apiHydrationData);
+    domUpdates.updateHydrationCard(currentHydration);
+    domUpdates.updateHydrationExpanded(currentHydration);
+    instantiateSleep(id, apiSleepData);
+    domUpdates.updateSleepCard(currentSleep);
+    domUpdates.updateSleepExpanded(currentSleep);
+    instantiateActivity(id, apiActivityData);
+    domUpdates.updateActivityCard(currentActivity, currentUser);
+    // updateActivityExpanded();
+  });
 };
 
 // const greetUser = () => {
@@ -165,9 +167,9 @@ const promiseAll = () => {
 // };
 
 const loadPage = () => {
-	promiseAll();
+  promiseAll();
 };
 
 window.onload = loadPage;
 
-export default promiseAll
+export default promiseAll;

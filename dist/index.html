@@ -42,10 +42,7 @@
           <h1 id="oneNightsQuality"></h1>
         </article>
         <article class="card user-card">
-          <img
-            class="card-image"
-            alt="User Image"
-            src="./images/user.png"/>
+          <img class="card-image" alt="User Image" src="./images/user.png" />
           <div class="user-text">
             <p id="userName">User Name</p>
             <p id="userAddress">Adress</p>
@@ -57,29 +54,37 @@
       </section>
       <section class="graph-wrapper">
         <article class="card expanded">
-          <img class="card-image" src="./images/waves.png" alt="waves">
+          <div class="chart">
+            <canvas id="hydrationChart"></canvas>
+          </div>
+          <!-- <img class="card-image" src="./images/waves.png" alt="waves" />
           <h3>WEEKLY HYDRATION</h3>
-          <div class="week" id="weeklyHydration">
+          <div class="week" id="weeklyHydration"> -->
             <!-- add dynamic data here -->
           </div>
         </article>
         <article class="card expanded">
-          <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon">
-          <p>WEEKLY SLEEP HOURS</p>
+          <!-- <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon"> -->
+          <div class="chart">
+            <canvas id="sleepChart"></canvas>
+          </div>
+          <!-- <p>WEEKLY SLEEP HOURS</p>
           <div class="week" id="oneWeeksHours">
-            <!-- add dynamic data here -->
+            add dynamic data here
           </div>
           <p>WEEKLY SLEEP QUALITY</p>
           <div class="week" id="oneWeeksQuality">
-            <!-- add dynamic data here -->
-          </div>
+            add dynamic data here
+          </div> -->
           <p id="allTimeAvg">All Time User Average</p>
         </article>
         <article class="card expanded">
+          <div class="chart">
+            <canvas id="weekActivity"></canvas>
+          </div>
           <!-- <img class="card-image" src="./images/" alt="walking"> -->
           <h3></h3>
-          <div class="week" id="">
-          </div>
+          <div class="week" id=""></div>
         </article>
       </section>
     </main>

@@ -42,7 +42,7 @@ describe("Activity", () => {
         dailyStepGoal: 5000,
         friends: [19, 11, 42, 33],
       },
-    ]
+    ];
     activityData = [
       {
         userID: 1,
@@ -236,9 +236,9 @@ describe("Activity", () => {
     ];
 
     activity1 = new Activity(1, activityData);
-    userRepository1 = new UserRepository(userDataSet)
-    user1 = userRepository1.createUser(1)
-    user1Stride = user1.strideLength
+    userRepository1 = new UserRepository(userDataSet);
+    user1 = userRepository1.createUser(1);
+    user1Stride = user1.strideLength;
   });
 
   it("should be a function", () => {
@@ -263,34 +263,45 @@ describe("Activity", () => {
   });
 
   it("should calculate and return miles user has walked for a specific day", () => {
-    expect(activity1.calculateMilesWalked(user1)).to.equal('11.34')
-  })
+    expect(activity1.calculateMilesWalked(user1)).to.equal("11.34");
+  });
 
   it("should return how many minutes they were active", () => {
-    expect(activity1.getMinutesActive()).to.equal(218)
-  })
+    expect(activity1.getMinutesActive()).to.equal(218);
+  });
 
   it("should show avergae of minutes active for last recorded week", () => {
-    expect(activity1.calculateWeeksAvg()).to.equal('174.29')
-  })
+    expect(activity1.calculateWeeksAvg()).to.equal("174.29");
+  });
 
   it("should return if they achieved their step goal for the day", () => {
-    expect(activity1.isStepGoalAchieved(user1)).to.equal(true)
-  })
+    expect(activity1.isStepGoalAchieved(user1)).to.equal(true);
+  });
 
   it("should return list of dates that they exceeded their step goal", () => {
-    expect(activity1.exceededStepGoal(user1)).to.eql(["2019/06/17", "2019/06/20", "2019/06/22", "2019/06/23"])
-  })
+    expect(activity1.exceededStepGoal(user1)).to.eql([
+      "2019/06/17",
+      "2019/06/20",
+      "2019/06/22",
+      "2019/06/23",
+    ]);
+  });
 
   it("should find the most stairs theyve ever climbed", () => {
-    expect(activity1.getMostStairsClimbed()).to.equal(36)
-  })
+    expect(activity1.getMostStairsClimbed()).to.equal(36);
+  });
 
   it("should be able to store all users activity data", () => {
-    expect(activity1.allUsersActivityData).to.eql(activityData)
-  })
+    expect(activity1.allUsersActivityData).to.eql(activityData);
+  });
 
-  it("should return all users average for stairs climbed, steps taken, minutes active", () => {
-    expect(activity1.getAllUserAvg()).to.eql({ stepsAvg: 7862, minutesAvg: 160, stairsAvg: 19 })
-  })
+  // it("should return all users average for stairs climbed, steps taken, minutes active", () => {
+  //   expect(activity1.getAllUserAvg()).to.eql({
+  //     stepsAvg: 7862,
+  //     minutesAvg: 160,
+  //     stairsAvg: 19,
+  //   });
+  // });
+
+  it("should return all users average for stairs climbed, steps taken, minutes active for a given day", () => {});
 });

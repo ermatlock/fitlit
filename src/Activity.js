@@ -57,18 +57,23 @@ class Activity {
     )[0].flightsOfStairs;
   }
 
-  getAllUserAvg() {
-    let obj = { stepsAvg: 0, minutesAvg: 0, stairsAvg: 0 };
-    this.allUsersActivityData.forEach((day) => {
-      obj.stepsAvg += day.numSteps;
-      obj.minutesAvg += day.minutesActive;
-      obj.stairsAvg += day.flightsOfStairs;
-    });
-    obj.stepsAvg = Math.round(obj.stepsAvg / this.allUsersActivityData.length);
-    obj.minutesAvg = Math.round(obj.minutesAvg / this.allUsersActivityData.length);
-    obj.stairsAvg = Math.round(obj.stairsAvg / this.allUsersActivityData.length);
-    return obj;
-  }
+  getAllUserAvg() {}
+  // getAllUserAvg() {
+  //   let obj = { stepsAvg: 0, minutesAvg: 0, stairsAvg: 0 };
+  //   this.allUsersActivityData.forEach((day) => {
+  //     obj.stepsAvg += day.numSteps;
+  //     obj.minutesAvg += day.minutesActive;
+  //     obj.stairsAvg += day.flightsOfStairs;
+  //   });
+  //   obj.stepsAvg = Math.round(obj.stepsAvg / this.allUsersActivityData.length);
+  //   obj.minutesAvg = Math.round(
+  //     obj.minutesAvg / this.allUsersActivityData.length
+  //   );
+  //   obj.stairsAvg = Math.round(
+  //     obj.stairsAvg / this.allUsersActivityData.length
+  //   );
+  //   return obj;
+  // }
 }
 
 export default Activity;
