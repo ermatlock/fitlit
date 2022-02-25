@@ -41,21 +41,22 @@ let domUpdates = {
   updateSleepExpanded(currentSleep) {
     const weeksSleep = currentSleep.getWeeklyHoursSlept();
     const weeksQuality = currentSleep.getWeeklySleepQuality();
+    updateSleepChart(weeksSleep, weeksQuality);
     allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
-    weeksSleep.forEach((hours, index) => {
-      oneWeeksHours.innerHTML += `
-      <ul>
-        <h3>DAY ${index + 1}</h3>
-        <h2>${hours}</h2>
-      </ul>`;
-    });
-    weeksQuality.forEach((quality, index) => {
-      oneWeeksQuality.innerHTML += `
-        <ul>
-          <h3>DAY ${index + 1}</h3>
-          <h2>${quality}</h2>
-        </ul>`;
-    });
+    // weeksSleep.forEach((hours, index) => {
+    //   oneWeeksHours.innerHTML += `
+    //   <ul>
+    //     <h3>DAY ${index + 1}</h3>
+    //     <h2>${hours}</h2>
+    //   </ul>`;
+    // });
+    // weeksQuality.forEach((quality, index) => {
+    //   oneWeeksQuality.innerHTML += `
+    //     <ul>
+    //       <h3>DAY ${index + 1}</h3>
+    //       <h2>${quality}</h2>
+    //     </ul>`;
+    // });
   },
 
   updateActivityCard(currentActivity, apiUserData) {
