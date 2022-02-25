@@ -1,4 +1,8 @@
-import { updateHydrationChart, updateSleepChart } from "./ourCharts";
+import {
+  updateHydrationChart,
+  updateSleepChart,
+  updateWeeklyActivity,
+} from "./ourCharts";
 
 let domUpdates = {
   greetUser(currentUser) {
@@ -65,6 +69,8 @@ let domUpdates = {
       currentUser
     )}`;
   },
+
+  updateActivityExpanded() {},
 };
 
 export default domUpdates;
