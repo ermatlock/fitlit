@@ -59,10 +59,10 @@ let domUpdates = {
     // });
   },
 
-  updateActivityCard(currentActivity, apiUserData) {
+  updateActivityCard(currentActivity, currentUser) {
     todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
     milesWalked.innerText = `${currentActivity.calculateMilesWalked(
-      apiUserData
+      currentUser
     )}`;
   },
 };

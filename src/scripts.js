@@ -93,7 +93,7 @@ const promiseAll = () => {
     domUpdates.updateSleepCard(currentSleep);
     domUpdates.updateSleepExpanded(currentSleep);
     instantiateActivity(id, apiActivityData);
-    domUpdates.updateActivityCard(currentActivity, apiUserData);
+    domUpdates.updateActivityCard(currentActivity, currentUser);
   });
 };
 
