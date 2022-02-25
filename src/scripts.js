@@ -45,6 +45,9 @@ const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeAvg = document.getElementById("allTimeAvg");
 const todaySteps = document.getElementById("todaySteps");
 const milesWalked = document.getElementById("milesWalked");
+const userInputActivity = document.getElementById("userInputActivity");
+const userInputHydration = document.getElementById("userInputHydration");
+const userInputSleep = document.getElementById("userInputSleep");
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
