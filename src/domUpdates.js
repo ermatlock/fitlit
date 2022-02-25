@@ -1,6 +1,8 @@
+import { updateHydrationChart, updateSleepChart } from "./ourCharts";
+
 let domUpdates = {
   greetUser(currentUser) {
-    welcome.innerText = `Welcome, ${currentUser.getFirstName()}`
+    welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
   },
 
   updateUserCard(currentUser, currentUserRepository) {
@@ -18,16 +20,17 @@ let domUpdates = {
   },
 
   updateHydrationExpanded(currentHydration) {
-    const hydration = currentHydration.getWeeksWater()
-    weeklyHydration.innerHTML = ''
-    return hydration.forEach((ounces, index) => {
-      weeklyHydration.innerHTML += `
-      <ul>
-        <h3>DAY ${index +1}</h3>
-        <h2>${ounces}</h2>
-        <h3>OZ</h3>
-      </ul>`
-    })
+    const hydration = currentHydration.getWeeksWater();
+    updateHydrationChart(hydration);
+    // weeklyHydration.innerHTML = ''
+    // return hydration.forEach((ounces, index) => {
+    //   weeklyHydration.innerHTML += `
+    //   <ul>
+    //     <h3>DAY ${index +1}</h3>
+    //     <h2>${ounces}</h2>
+    //     <h3>OZ</h3>
+    //   </ul>`
+    // })
   },
 
   updateSleepCard(currentSleep) {
@@ -36,30 +39,31 @@ let domUpdates = {
   },
 
   updateSleepExpanded(currentSleep) {
-    const weeksSleep = currentSleep.getWeeklyHoursSlept()
-    const weeksQuality = currentSleep.getWeeklySleepQuality()
+    const weeksSleep = currentSleep.getWeeklyHoursSlept();
+    const weeksQuality = currentSleep.getWeeklySleepQuality();
     allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
     weeksSleep.forEach((hours, index) => {
       oneWeeksHours.innerHTML += `
       <ul>
-        <h3>DAY ${index +1}</h3>
+        <h3>DAY ${index + 1}</h3>
         <h2>${hours}</h2>
-      </ul>`
-    })
+      </ul>`;
+    });
     weeksQuality.forEach((quality, index) => {
       oneWeeksQuality.innerHTML += `
         <ul>
-          <h3>DAY ${index +1}</h3>
+          <h3>DAY ${index + 1}</h3>
           <h2>${quality}</h2>
-        </ul>`
-    })
+        </ul>`;
+    });
   },
 
   updateActivityCard(currentActivity, apiUserData) {
     todaySteps.innerText = `${currentActivity.getLastRecordedSteps()}`;
-    milesWalked.innerText = `${currentActivity.calculateMilesWalked(apiUserData)}`;
-  }
+    milesWalked.innerText = `${currentActivity.calculateMilesWalked(
+      apiUserData
+    )}`;
+  },
 };
-
 
 export default domUpdates;
