@@ -35,7 +35,7 @@ const postHydration = (id, date, numOunces) => {
       numOunces: numOunces,
     }),
     headers: { "Content-Type": "application/json" },
-  });
+  }).catch((error) => console.log(error));
 };
 
 const postSleep = (id, date, hoursSlept, sleepQuality) => {
@@ -48,7 +48,7 @@ const postSleep = (id, date, hoursSlept, sleepQuality) => {
       sleepQuality: sleepQuality,
     }),
     headers: { "Content-Type": "application/json" },
-  });
+  }).catch((error) => console.log(error));
 };
 
 const postActivity = (id, date, numSteps, minutesActive, flightsOfStairs) => {
@@ -62,7 +62,7 @@ const postActivity = (id, date, numSteps, minutesActive, flightsOfStairs) => {
       flightsOfStairs: flightsOfStairs,
     }),
     headers: { "Content-Type": "application/json" },
-  });
+  }).catch((error) => console.log(error));
 };
 
 export {
