@@ -18,6 +18,7 @@ import {
   fetchSleepData,
   fetchActivityData,
   fetchHydrationData,
+  postHydration,
 } from "./apiCalls.js";
 import { updateHydrationChart, updateSleepChart } from "./ourCharts";
 import domUpdates from "./domUpdates";
@@ -45,6 +46,10 @@ const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeAvg = document.getElementById("allTimeAvg");
 const todaySteps = document.getElementById("todaySteps");
 const milesWalked = document.getElementById("milesWalked");
+const userInputActivity = document.getElementById("userInputActivity");
+const userInputHydration = document.getElementById("userInputHydration");
+const userInputSleep = document.getElementById("userInputSleep");
+const userInputButton = document.getElementById("userInputButton");
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -97,6 +102,12 @@ const promiseAll = () => {
     // updateActivityExpanded();
   });
 };
+
+const submitInfo = () => {
+  console.log("ISITWORKING??")
+  postHydration(currentUser.id, "2022/02/25", userInputHydration.value)
+};
+
 
 // const greetUser = () => {
 // 	welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
@@ -171,5 +182,7 @@ const loadPage = () => {
 };
 
 window.onload = loadPage;
+
+userInputButton.addEventListener("click", submitInfo)
 
 export default promiseAll;
