@@ -19,6 +19,7 @@ import {
   fetchActivityData,
   fetchHydrationData,
   postHydration,
+  postSleep,
 } from "./apiCalls.js";
 import { updateHydrationChart, updateSleepChart } from "./ourCharts";
 import domUpdates from "./domUpdates";
@@ -104,10 +105,9 @@ const promiseAll = () => {
 };
 
 const submitInfo = () => {
-  console.log("ISITWORKING??")
-  postHydration(currentUser.id, "2022/02/25", userInputHydration.value)
+  console.log("ISITWORKING??");
+  postHydration(currentUser.id, "2022/02/25", userInputHydration.value);
 };
-
 
 // const greetUser = () => {
 // 	welcome.innerText = `Welcome, ${currentUser.getFirstName()}`;
@@ -183,6 +183,6 @@ const loadPage = () => {
 
 window.onload = loadPage;
 
-userInputButton.addEventListener("click", submitInfo)
+userInputButton.addEventListener("click", submitInfo);
 
 export default promiseAll;
