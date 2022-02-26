@@ -51,6 +51,20 @@ const postSleep = (id, date, hoursSlept, sleepQuality) => {
   });
 };
 
+const postActivity = (id, date, numSteps, minutesActive, flightsOfStairs) => {
+  return fetch("http://localhost:3001/api/v1/activity", {
+    method: "POST",
+    body: JSON.stringify({
+      userID: id,
+      date: date,
+      numSteps: numSteps,
+      minutesActive: minutesActive,
+      flightsOfStairs: flightsOfStairs,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
 export {
   fetchUserData,
   fetchSleepData,
@@ -58,6 +72,7 @@ export {
   fetchHydrationData,
   postHydration,
   postSleep,
+  postActivity,
 };
 
 // export defualt {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
