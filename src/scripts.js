@@ -20,6 +20,7 @@ import {
   fetchHydrationData,
   postHydration,
   postSleep,
+  postActivity,
 } from "./apiCalls.js";
 import { updateHydrationChart, updateSleepChart } from "./ourCharts";
 import domUpdates from "./domUpdates";
@@ -47,10 +48,16 @@ const oneWeeksQuality = document.getElementById("oneWeeksQuality");
 const allTimeAvg = document.getElementById("allTimeAvg");
 const todaySteps = document.getElementById("todaySteps");
 const milesWalked = document.getElementById("milesWalked");
-const userInputActivity = document.getElementById("userInputActivity");
 const userInputHydration = document.getElementById("userInputHydration");
 const userInputSleepHours = document.getElementById("userInputSleepHours");
 const userInputSleepQuality = document.getElementById("userInputSleepQuality");
+const userInputNumSteps = document.getElementById("userInputNumSteps");
+const userInputMinutesActive = document.getElementById(
+  "userInputMinutesActive"
+);
+const userInputFlightsOfStairs = document.getElementById(
+  "userInputFlightsOfStairs"
+);
 const userInputButton = document.getElementById("userInputButton");
 
 const getRandomIndex = (array) => {
@@ -107,13 +114,25 @@ const promiseAll = () => {
 
 const submitInfo = () => {
   console.log("ISITWORKING??");
-  postHydration(currentUser.id, "2022/02/25", userInputHydration.value);
+  postHydration(
+    currentUser.id,
+    "2022/02/25",
+    parseInt(userInputHydration.value)
+  );
   postSleep(
     currentUser.id,
     "2022/02/25",
-    userInputSleepHours.value,
-    userInputSleepQuality.value
+    parseInt(userInputSleepHours.value),
+    parseInt(userInputSleepQuality.value)
   );
+  postActivity(
+    currentUser.id,
+    "2022/02/25",
+    parseInt(userInputNumSteps.value),
+    parseInt(userInputMinutesActive.value),
+    parseInt(userInputFlightsOfStairs.value)
+  );
+
   // postSleep(currentUser.id, "2022/02/25", userInputSleepQuality.value);
 };
 
