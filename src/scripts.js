@@ -49,7 +49,8 @@ const todaySteps = document.getElementById("todaySteps");
 const milesWalked = document.getElementById("milesWalked");
 const userInputActivity = document.getElementById("userInputActivity");
 const userInputHydration = document.getElementById("userInputHydration");
-const userInputSleep = document.getElementById("userInputSleep");
+const userInputSleepHours = document.getElementById("userInputSleepHours");
+const userInputSleepQuality = document.getElementById("userInputSleepQuality");
 const userInputButton = document.getElementById("userInputButton");
 
 const getRandomIndex = (array) => {
@@ -107,6 +108,13 @@ const promiseAll = () => {
 const submitInfo = () => {
   console.log("ISITWORKING??");
   postHydration(currentUser.id, "2022/02/25", userInputHydration.value);
+  postSleep(
+    currentUser.id,
+    "2022/02/25",
+    userInputSleepHours.value,
+    userInputSleepQuality.value
+  );
+  // postSleep(currentUser.id, "2022/02/25", userInputSleepQuality.value);
 };
 
 // const greetUser = () => {
