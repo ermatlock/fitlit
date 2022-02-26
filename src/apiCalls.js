@@ -38,12 +38,12 @@ const postHydration = (id, date, numOunces) => {
       numOunces: numOunces
     }),
     headers: {'Content-Type': 'application/json'}
-  )
+})
 };
 
 
 
-export {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
+export {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData, postHydration};
 
 // export defualt {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
 
