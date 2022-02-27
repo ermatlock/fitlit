@@ -49,7 +49,12 @@ let domUpdates = {
     )}`;
   },
 
-  // updateActivityExpanded() {},
+  updateActivityExpanded(currentActivity) {
+    const weeklySteps = currentActivity.lastWeeksData('numSteps')
+    const weeklyMinutes = currentActivity.lastWeeksData('minutesActive')
+    const weeklyStairs = currentActivity.lastWeeksData('flightsOfStairs')
+    updateWeeklyActivity(weeklySteps, weeklyMinutes, weeklyStairs)
+  },
 };
 
 export default domUpdates;
