@@ -22,7 +22,13 @@ import {
   postSleep,
   postActivity,
 } from "./apiCalls.js";
-import { updateHydrationChart, updateSleepChart } from "./ourCharts";
+import {
+  updateHydrationChart,
+  updateSleepChart,
+  updateWeeklySteps,
+  updateWeeklyStairs,
+  updateWeeklyMinutes,
+} from "./ourCharts";
 import domUpdates from "./domUpdates";
 
 let currentUserRepository;
@@ -96,8 +102,8 @@ const promiseAll = () => {
     const apiActivityData = data[2].activityData;
     const apiHydrationData = data[3].hydrationData;
     const id = getRandomIndex(apiUserData);
-    console.log('ID>>>>', id)
-    console.log('USER>>>>>>', currentUser)
+    console.log("ID>>>>", id);
+    console.log("USER>>>>>>", currentUser);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
     domUpdates.greetUser(currentUser);

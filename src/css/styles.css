@@ -63,7 +63,7 @@ html {
     #0c0132 100%
   );
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 150vh;
 }
 
 /*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
@@ -116,7 +116,8 @@ ul {
   padding: 20px 0px 20px 0px;
 }
 
-.graph-wrapper {
+.graph-wrapper,
+.graph-wrapper-2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

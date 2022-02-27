@@ -1,7 +1,9 @@
 import {
   updateHydrationChart,
   updateSleepChart,
-  updateWeeklyActivity,
+  updateWeeklySteps,
+  updateWeeklyStairs,
+  updateWeeklyMinutes
 } from "./ourCharts";
 
 let domUpdates = {
@@ -53,7 +55,9 @@ let domUpdates = {
     const weeklySteps = currentActivity.lastWeeksData('numSteps')
     const weeklyMinutes = currentActivity.lastWeeksData('minutesActive')
     const weeklyStairs = currentActivity.lastWeeksData('flightsOfStairs')
-    updateWeeklyActivity(weeklySteps, weeklyMinutes, weeklyStairs)
+    updateWeeklySteps(weeklySteps)
+    updateWeeklyMinutes(weeklyMinutes)
+    updateWeeklyStairs(weeklyStairs)
   },
 };
 
