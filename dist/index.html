@@ -1,85 +1,131 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../src/css/styles.css" />
+    <title>FitLit Activity Tracker</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="../src/css/styles.css" />
-  <title>FitLit Activity Tracker</title>
-</head>
-
-<body>
-  <main class="main-container">
-    <!-- <button id="myBtn">Open Modal</button> -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="errorMessage">Sorry, we are having trouble posting your data</p>
+  <body>
+    <main class="main-container">
+      <!-- <button id="myBtn">Open Modal</button> -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="errorMessage">
+            Sorry, we are having trouble posting your data
+          </p>
+        </div>
       </div>
-    </div>
-    <nav class="nav-wrapper">
-      <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
-    </nav>
-    <section class="card-wrapper">
-      <form class="card user-input">
-        <!-- <input id="userInputActivity" type="text" placeholder="Enter Your Activity Here" required /> -->
-        <input id="userInputHydration" type="number" placeholder="Enter Your Hydration In Ounces" required />
-        <input id="userInputSleepHours" type="number"  placeholder="Enter Your Sleep Hours" required />
-        <input id="userInputSleepQuality" type="number"  placeholder="Enter Your Sleep Quality" required />
-        <input id="userInputNumSteps" type="number"  placeholder="Enter Your Steps" required />
-        <input id="userInputMinutesActive" type="number"  placeholder="Enter Your Minutes Active" required />
-        <input id="userInputFlightsOfStairs" type="number"  placeholder="Enter Your Flights of Stairs" required />
-        <button id="userInputButton" type="button" name="button">SUBMIT</button>
-      </form>
-      <article class="card activity-card">
-        <img class="card-image" alt="Activity Image" src="./images/run.svg" />
-        <h1 id="todaySteps"></h1>
-        <h3>STEPS</h3>
-        <h1 id="milesWalked"></h1>
-        <h3>MILES WALKED</h3>
-      </article>
-      <article class="card hydration-card">
-        <img class="card-image water-image" alt="Water Image" src="./images/droplet.png" />
+      <nav class="nav-wrapper">
+        <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
+      </nav>
+      <section class="card-wrapper">
+        <form class="card user-input">
+          <!-- <input id="userInputActivity" type="text" placeholder="Enter Your Activity Here" required /> -->
+          <input
+            id="userInputHydration"
+            type="number"
+            placeholder="Enter Your Hydration In Ounces"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <input
+            id="userInputSleepHours"
+            type="number"
+            placeholder="Enter Your Sleep Hours"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <input
+            id="userInputSleepQuality"
+            type="number"
+            placeholder="Enter Your Sleep Quality"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <input
+            id="userInputNumSteps"
+            type="number"
+            placeholder="Enter Your Steps"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <input
+            id="userInputMinutesActive"
+            type="number"
+            placeholder="Enter Your Minutes Active"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <input
+            id="userInputFlightsOfStairs"
+            type="number"
+            placeholder="Enter Your Flights of Stairs"
+            required
+            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+          />
+          <button id="userInputButton" type="button" name="button">
+            SUBMIT
+          </button>
+        </form>
+        <article class="card activity-card">
+          <img class="card-image" alt="Activity Image" src="./images/run.svg" />
+          <h1 id="todaySteps"></h1>
+          <h3>STEPS</h3>
+          <h1 id="milesWalked"></h1>
+          <h3>MILES WALKED</h3>
+        </article>
+        <article class="card hydration-card">
+          <img
+            class="card-image water-image"
+            alt="Water Image"
+            src="./images/droplet.png"
+          />
 
-        <h1 id="dailyHydration"></h1>
-        <h3>OZ</h3>
-      </article>
-      <article class="card sleep-card">
-        <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
-        <h3>HOURS SLEEP</h3>
-        <h1 id="oneNightsHours"></h1>
-        <h3>SLEEP QUALITY</h3>
-        <h1 id="oneNightsQuality"></h1>
-      </article>
-      <article class="card user-card">
-        <img class="card-image" alt="User Image" src="./images/user.png" />
-        <div class="user-text">
-          <p id="userName">User Name</p>
-          <p id="userAddress">Adress</p>
-          <p id="userEmail">Email Address</p>
-          <p id="userStrideLength">Stride Length</p>
-          <p id="compareStepGoal"></p>
-        </div>
-      </article>
-    </section>
-    <section class="graph-wrapper">
-      <article class="card expanded">
-        <div class="chart">
-          <canvas id="hydrationChart"></canvas>
-        </div>
-        <!-- <img class="card-image" src="./images/waves.png" alt="waves" />
+          <h1 id="dailyHydration"></h1>
+          <h3>OZ</h3>
+        </article>
+        <article class="card sleep-card">
+          <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
+          <h3>HOURS SLEEP</h3>
+          <h1 id="oneNightsHours"></h1>
+          <h3>SLEEP QUALITY</h3>
+          <h1 id="oneNightsQuality"></h1>
+        </article>
+        <article class="card user-card">
+          <img class="card-image" alt="User Image" src="./images/user.png" />
+          <div class="user-text">
+            <p id="userName">User Name</p>
+            <p id="userAddress">Adress</p>
+            <p id="userEmail">Email Address</p>
+            <p id="userStrideLength">Stride Length</p>
+            <p id="compareStepGoal"></p>
+          </div>
+        </article>
+      </section>
+      <section class="graph-wrapper">
+        <article class="card expanded">
+          <div class="chart">
+            <canvas id="hydrationChart"></canvas>
+          </div>
+          <!-- <img class="card-image" src="./images/waves.png" alt="waves" />
           <h3>WEEKLY HYDRATION</h3>
           <div class="week" id="weeklyHydration"> -->
-        <!-- add dynamic data here -->
-        </div>
-      </article>
-      <article class="card expanded">
-        <!-- <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon"> -->
-        <div class="chart">
-          <canvas id="sleepChart"></canvas>
-        </div>
-        <!-- <p>WEEKLY SLEEP HOURS</p>
+          <!-- add dynamic data here -->
+          <!-- </div> -->
+        </article>
+        <article class="card expanded">
+          <!-- <img class="card-image" src="./images/sleeping.png" alt="sleeping-moon"> -->
+          <div class="chart">
+            <canvas id="sleepChart"></canvas>
+          </div>
+          <!-- <p>WEEKLY SLEEP HOURS</p>
           <div class="week" id="oneWeeksHours">
             add dynamic data here
           </div>
@@ -87,19 +133,18 @@
           <div class="week" id="oneWeeksQuality">
             add dynamic data here
           </div> -->
-        <p id="allTimeAvg">All Time User Average</p>
-      </article>
-      <article class="card expanded">
-        <div class="chart">
-          <canvas id="weekActivity"></canvas>
-        </div>
-        <!-- <img class="card-image" src="./images/" alt="walking"> -->
-        <h3></h3>
-        <div class="week" id=""></div>
-      </article>
-    </section>
-  </main>
-  <script src="bundle.js"></script>
-</body>
-
+          <p id="allTimeAvg">All Time User Average</p>
+        </article>
+        <article class="card expanded">
+          <div class="chart">
+            <canvas id="weekActivity"></canvas>
+          </div>
+          <!-- <img class="card-image" src="./images/" alt="walking"> -->
+          <h3></h3>
+          <div class="week" id=""></div>
+        </article>
+      </section>
+    </main>
+    <script src="bundle.js"></script>
+  </body>
 </html>
