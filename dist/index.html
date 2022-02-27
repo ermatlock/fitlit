@@ -11,16 +11,27 @@
 
 <body>
   <main class="main-container">
+    <!-- <button id="myBtn">Open Modal</button> -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="errorMessage">Sorry, we are having trouble posting your data</p>
+      </div>
+    </div>
     <nav class="nav-wrapper">
       <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
     </nav>
     <section class="card-wrapper">
-      <article class="card user-input">
+      <form class="card user-input">
         <!-- <input id="userInputActivity" type="text" placeholder="Enter Your Activity Here" required /> -->
-        <input id="userInputHydration" type="text" placeholder="Enter Your Hydration Here" required />
-        <!-- <input id="userInputSleep" type="text" placeholder="Enter Your Sleep Here" required /> -->
+        <input id="userInputHydration" type="text" placeholder="Enter Your Hydration In Ounces" required />
+        <input id="userInputSleepHours" type="text" placeholder="Enter Your Sleep Hours" required />
+        <input id="userInputSleepQuality" type="text" placeholder="Enter Your Sleep Quality" required />
+        <input id="userInputNumSteps" type="text" placeholder="Enter Your Steps" required />
+        <input id="userInputMinutesActive" type="text" placeholder="Enter Your Minutes Active" required />
+        <input id="userInputFlightsOfStairs" type="text" placeholder="Enter Your Flights of Stairs" required />
         <button id="userInputButton" type="button" name="button">SUBMIT</button>
-      </article>
+      </form>
       <article class="card activity-card">
         <img class="card-image" alt="Activity Image" src="./images/run.svg" />
         <h1 id="todaySteps"></h1>
