@@ -1,27 +1,49 @@
+import domUpdates from "./domUpdates";
+
 // //FETCH calls
 //
 const fetchUserData = () => {
   return fetch("http://localhost:3001/api/v1/users")
     .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      domUpdates.showError(
+        "Sorry, we were unable to retrieve your data. Please contact @nikseif to file a complaint"
+      );
+    });
 };
 
 const fetchSleepData = () => {
   return fetch("http://localhost:3001/api/v1/sleep")
     .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      domUpdates.showError(
+        "Sorry, we were unable to retrieve your data. Please contact @sertmer to file a complaint"
+      );
+    });
 };
 
 const fetchActivityData = () => {
   return fetch("http://localhost:3001/api/v1/activity	")
     .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      domUpdates.showError(
+        "Sorry, we were unable to retrieve your data. Please contact @sertmer to file a complaint"
+      );
+    });
 };
 
 const fetchHydrationData = () => {
   return fetch("http://localhost:3001/api/v1/hydration")
     .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      domUpdates.showError(
+        "Sorry, we were unable to retrieve your data. Please contact @sertmer to file a complaint"
+      );
+    });
 };
 
 //~~~~~~ POST ~~~~~~~
@@ -35,7 +57,12 @@ const postHydration = (id, date, numOunces) => {
       numOunces: numOunces,
     }),
     headers: { "Content-Type": "application/json" },
-  }).catch((error) => console.log(error));
+  }).catch((error) => {
+    console.log(error);
+    domUpdates.showError(
+      "Sorry, we were unable to record your data. Please contact @hfaerber to file a complaint"
+    );
+  });
 };
 
 const postSleep = (id, date, hoursSlept, sleepQuality) => {
@@ -48,7 +75,12 @@ const postSleep = (id, date, hoursSlept, sleepQuality) => {
       sleepQuality: sleepQuality,
     }),
     headers: { "Content-Type": "application/json" },
-  }).catch((error) => console.log(error));
+  }).catch((error) => {
+    console.log(error),
+      domUpdates.showError(
+        "Sorry, we were unable to record your data. Please contact @hfaerber to file a complaint"
+      );
+  });
 };
 
 const postActivity = (id, date, numSteps, minutesActive, flightsOfStairs) => {
@@ -62,7 +94,12 @@ const postActivity = (id, date, numSteps, minutesActive, flightsOfStairs) => {
       flightsOfStairs: flightsOfStairs,
     }),
     headers: { "Content-Type": "application/json" },
-  }).catch((error) => console.log(error));
+  }).catch((error) => {
+    console.log(error);
+    domUpdates.showError(
+      "Sorry, we were unable to record your data. Please contact @hfaerber to file a complaint"
+    );
+  });
 };
 
 export {
