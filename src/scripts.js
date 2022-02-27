@@ -28,6 +28,7 @@ import {
   updateWeeklySteps,
   updateWeeklyStairs,
   updateWeeklyMinutes,
+  updateSleepQualityChart
 } from "./ourCharts";
 import domUpdates from "./domUpdates";
 

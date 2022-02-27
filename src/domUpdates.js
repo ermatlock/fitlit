@@ -3,7 +3,8 @@ import {
   updateSleepChart,
   updateWeeklySteps,
   updateWeeklyStairs,
-  updateWeeklyMinutes
+  updateWeeklyMinutes,
+  updateSleepQualityChart
 } from "./ourCharts";
 
 let domUpdates = {
@@ -39,7 +40,8 @@ let domUpdates = {
   updateSleepExpanded(currentSleep) {
     const weeksSleep = currentSleep.getWeeklyHoursSlept();
     const weeksQuality = currentSleep.getWeeklySleepQuality();
-    updateSleepChart(weeksSleep, weeksQuality);
+    updateSleepChart(weeksSleep);
+    updateSleepQualityChart(weeksQuality)
     allTimeAvg.innerText = `Most people average ${currentSleep.getAverageSleepHours()} hours of sleep with a sleep quality of ${currentSleep.getAverageSleepQuality()}`;
 
   },
