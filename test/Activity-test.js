@@ -303,5 +303,7 @@ describe("Activity", () => {
   //   });
   // });
 
-  it("should return all users average for stairs climbed, steps taken, minutes active for a given day", () => {});
+  it("should return all users average for stairs climbed, steps taken, minutes active for latest day", () => {
+    expect(activity1.lastDayAllAvg()).to.eql({ steps: 7580, minutes: 193, flights: 10})
+  });
 });

@@ -74,6 +74,34 @@ class Activity {
   //   );
   //   return obj;
   // }
+
+  lastDayAllAvg() {
+    let lastDayIndex = this.activityData.length - 1;
+    let lastDate = this.activityData[lastDayIndex].date;
+    let lastDateAllUsers = this.allUsersActivityData.filter(
+      (user) => user.date === lastDate
+    );
+    let steps = Math.round(
+      lastDateAllUsers.reduce((sum, user) => {
+        sum += user.numSteps;
+        return sum;
+      }, 0) / lastDateAllUsers.length
+    );
+    let minutes = Math.round(
+      lastDateAllUsers.reduce((sum, user) => {
+        sum += user.minutesActive;
+        return sum;
+      }, 0) / lastDateAllUsers.length
+    );
+    let flights = Math.round(
+      lastDateAllUsers.reduce((sum, user) => {
+        sum += user.flightsOfStairs;
+        return sum;
+      }, 0) / lastDateAllUsers.length
+    );
+
+    return { steps, minutes, flights };
+  }
 }
 
 export default Activity;
