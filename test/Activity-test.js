@@ -295,15 +295,13 @@ describe("Activity", () => {
     expect(activity1.allUsersActivityData).to.eql(activityData);
   });
 
-  // it("should return all users average for stairs climbed, steps taken, minutes active", () => {
-  //   expect(activity1.getAllUserAvg()).to.eql({
-  //     stepsAvg: 7862,
-  //     minutesAvg: 160,
-  //     stairsAvg: 19,
-  //   });
-  // });
-
   it("should return all users average for stairs climbed, steps taken, minutes active for latest day", () => {
     expect(activity1.lastDayAllAvg()).to.eql({ steps: 7580, minutes: 193, flights: 10})
   });
+
+  it("should return last weeks worth of steps", () => {
+    expect(activity1.lastWeeksData('numSteps')).to.eql([14329, 4419, 8429, 14478, 6760, 10289, 13928])
+    expect(activity1.lastWeeksData('minutesActive')).to.eql([168, 165, 275, 140, 135, 119, 218])
+    expect(activity1.lastWeeksData('flightsOfStairs')).to.eql([18, 33, 2, 12, 6, 6, 21])
+  })
 });
