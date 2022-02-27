@@ -96,6 +96,8 @@ const promiseAll = () => {
     const apiActivityData = data[2].activityData;
     const apiHydrationData = data[3].hydrationData;
     const id = getRandomIndex(apiUserData);
+    console.log('ID>>>>', id)
+    console.log('USER>>>>>>', currentUser)
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
     domUpdates.greetUser(currentUser);
@@ -108,7 +110,7 @@ const promiseAll = () => {
     domUpdates.updateSleepExpanded(currentSleep);
     instantiateActivity(id, apiActivityData);
     domUpdates.updateActivityCard(currentActivity, currentUser);
-    // updateActivityExpanded();
+    domUpdates.updateActivityExpanded(currentActivity);
   });
 };
 
