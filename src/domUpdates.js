@@ -51,6 +51,7 @@ let domUpdates = {
     milesWalked.innerText = `${currentActivity.calculateMilesWalked(
       currentUser
     )}`;
+    minutesActive.innerText = `${currentActivity.getMinutesActive()}`;
   },
 
   updateActivityExpanded(currentActivity) {
