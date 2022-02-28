@@ -62,7 +62,7 @@ html {
     #32135a 64%,
     #0c0132 100%
   );
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 150vh;
 }
 
