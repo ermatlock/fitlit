@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,7 +75,7 @@
             SUBMIT
           </button>
         </form>
-        <article tabindex="1" class="card activity-card">
+        <article tabindex="0" class="card activity-card">
           <img class="card-image" alt="Activity Image" src="./images/run.svg" />
           <h1 id="todaySteps"></h1>
           <h3>STEPS</h3>
@@ -83,7 +84,7 @@
           <h1 id="minutesActive"></h1>
           <h3>MINUTES ACTIVE</h3>
         </article>
-        <article tabindex="2" class="card hydration-card">
+        <article tabindex="0" class="card hydration-card">
           <img
             class="card-image water-image"
             alt="Water Image"
@@ -93,14 +94,14 @@
           <h1 id="dailyHydration"></h1>
           <h3>OZ</h3>
         </article>
-        <article tabindex="3" class="card sleep-card">
+        <article tabindex="0" class="card sleep-card">
           <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
           <h3>HOURS SLEEP</h3>
           <h1 id="oneNightsHours"></h1>
           <h3>SLEEP QUALITY</h3>
           <h1 id="oneNightsQuality"></h1>
         </article>
-        <article tabindex="4" class="card user-card">
+        <article tabindex="0" class="card user-card">
           <img class="card-image" alt="User Image" src="./images/user.png" />
           <div class="user-text">
             <p id="userName">User Name</p>
@@ -112,13 +113,13 @@
         </article>
       </section>
       <section class="graph-wrapper">
-        <article tabindex="5" class="card expanded">
+        <article tabindex="0" class="card expanded">
           <div class="chart">
             <canvas id="hydrationChart"></canvas>
           </div>
 
         </article>
-        <article tabindex="6" class="card expanded">
+        <article tabindex="0" class="card expanded">
 
           <div class="chart">
             <canvas id="sleepChart"></canvas>
@@ -126,7 +127,7 @@
 
           <p id="allTimeAvg">All Time User Average</p>
         </article>
-        <article tabindex="7" class="card expanded">
+        <article tabindex="0" class="card expanded">
           <div class="chart">
             <canvas id="sleepQualityChart"></canvas>
           </div>
@@ -136,14 +137,14 @@
         </article>
       </section>
       <section class="graph-wrapper-2">
-        <article class="card expanded">
+        <article tabindex="0" class="card expanded">
           <div class="chart">
             <canvas id="weekSteps"></canvas>
           </div>
           <p id="allStepAvg">All Time User Average</p>
 
         </article>
-        <article class="card expanded">
+        <article tabindex="0" class="card expanded">
 
           <div class="chart">
             <canvas id="weekStairs"></canvas>
@@ -151,7 +152,7 @@
 
           <p id="allStairsAvg">All Time User Average</p>
         </article>
-        <article class="card expanded">
+        <article tabindex="0" class="card expanded">
           <div class="chart">
             <canvas id="weekMinutes"></canvas>
           </div>
