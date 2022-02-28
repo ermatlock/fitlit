@@ -6,10 +6,16 @@ import currentHydration from "./scripts";
 let hydrationWeekChart;
 let sleepWeekChart;
 let activityWeekChart;
+let stairsChart;
+let minutesChart;
 
 const hydrationChart = document.getElementById("hydrationChart");
 const sleepChart = document.getElementById("sleepChart");
 const weekActivity = document.getElementById("weekActivity");
+const weekSteps = document.getElementById("weekSteps");
+const weekMinutes = document.getElementById("weekMinutes");
+const weekStairs = document.getElementById("weekStairs");
+const sleepQualityChart = document.getElementById("sleepQualityChart")
 
 const updateHydrationChart = (data) => {
   hydrationWeekChart = new Chart(hydrationChart, {
@@ -52,7 +58,7 @@ const updateHydrationChart = (data) => {
   });
 };
 
-const updateSleepChart = (data1, data2) => {
+const updateSleepChart = (data1) => {
   sleepWeekChart = new Chart(sleepChart, {
     type: "line",
     data: {
@@ -81,9 +87,27 @@ const updateSleepChart = (data1, data2) => {
           ],
           borderWidth: 6,
         },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+};
+
+const updateSleepQualityChart = (data1) => {
+  sleepWeekChart = new Chart(sleepQualityChart, {
+    type: "line",
+    data: {
+      labels: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"],
+      datasets: [
         {
           label: "Sleep Quality",
-          data: data2,
+          data: data1,
           backgroundColor: [
             "rgba(255, 99, 132, 0.5)",
             "rgba(54, 162, 235, 0.5)",
@@ -114,10 +138,10 @@ const updateSleepChart = (data1, data2) => {
       },
     },
   });
-};
+}
 
-const updateWeeklyActivity = (steps, flights, minutes) => {
-  activityWeekChart = new Chart(weekActivity, {
+const updateWeeklySteps = (steps) => {
+  activityWeekChart = new Chart(weekSteps, {
     type: "line",
     data: {
       labels: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"],
@@ -145,9 +169,27 @@ const updateWeeklyActivity = (steps, flights, minutes) => {
           ],
           borderWidth: 6,
         },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+};
+
+const updateWeeklyMinutes = (steps) => {
+  minutesChart = new Chart(weekMinutes, {
+    type: "line",
+    data: {
+      labels: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"],
+      datasets: [
         {
-          label: "Flights of Stairs",
-          data: flights,
+          label: "Minutes Active",
+          data: steps,
           backgroundColor: [
             "rgba(255, 99, 132, 0.5)",
             "rgba(54, 162, 235, 0.5)",
@@ -168,9 +210,26 @@ const updateWeeklyActivity = (steps, flights, minutes) => {
           ],
           borderWidth: 6,
         },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+};
+const updateWeeklyStairs = (steps) => {
+   stairsChart =new Chart(weekStairs, {
+    type: "line",
+    data: {
+      labels: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"],
+      datasets: [
         {
-          label: "Minutes Active",
-          data: minutes,
+          label: "Flights of Stairs",
+          data: steps,
           backgroundColor: [
             "rgba(255, 99, 132, 0.5)",
             "rgba(54, 162, 235, 0.5)",
@@ -203,4 +262,4 @@ const updateWeeklyActivity = (steps, flights, minutes) => {
   });
 };
 
-export { updateHydrationChart, updateSleepChart, updateWeeklyActivity };
+export { updateHydrationChart, updateSleepChart, updateWeeklySteps, updateWeeklyStairs, updateWeeklyMinutes, updateSleepQualityChart };
