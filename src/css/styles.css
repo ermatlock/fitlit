@@ -133,12 +133,16 @@ ul {
   box-shadow: 1px 1px 80px 1px #81abadab;
 }
 
+.user-input {
+  width: 18VW;
+}
+
 .activity-card {
-  background-color: #71c4ff;
+  background-color: #0a76db;
 }
 
 .hydration-card {
-  background-color: #ff6d37;
+  background-color: #ff4500;;
 }
 
 .expanded {
@@ -163,14 +167,16 @@ ul {
 }
 
 .sleep-card {
-  background-color: blueviolet;
+  background-color: #aa32e2;;
 }
 
 .user-card {
-  background-color: #e91e63;
+  background-color: #d11f98;;
 }
 
 .user-text {
+  font-size: 2vh;
+  overflow-wrap: break-word;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
