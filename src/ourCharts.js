@@ -15,7 +15,7 @@ const weekActivity = document.getElementById("weekActivity");
 const weekSteps = document.getElementById("weekSteps");
 const weekMinutes = document.getElementById("weekMinutes");
 const weekStairs = document.getElementById("weekStairs");
-const sleepQualityChart = document.getElementById("sleepQualityChart")
+const sleepQualityChart = document.getElementById("sleepQualityChart");
 
 const updateHydrationChart = (data) => {
   hydrationWeekChart = new Chart(hydrationChart, {
@@ -44,7 +44,7 @@ const updateHydrationChart = (data) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -85,7 +85,7 @@ const updateSleepChart = (data1) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -126,7 +126,7 @@ const updateSleepQualityChart = (data1) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -138,7 +138,7 @@ const updateSleepQualityChart = (data1) => {
       },
     },
   });
-}
+};
 
 const updateWeeklySteps = (steps) => {
   activityWeekChart = new Chart(weekSteps, {
@@ -167,7 +167,7 @@ const updateWeeklySteps = (steps) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -208,7 +208,7 @@ const updateWeeklyMinutes = (steps) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -222,7 +222,7 @@ const updateWeeklyMinutes = (steps) => {
   });
 };
 const updateWeeklyStairs = (steps) => {
-   stairsChart =new Chart(weekStairs, {
+  stairsChart = new Chart(weekStairs, {
     type: "line",
     data: {
       labels: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"],
@@ -248,7 +248,7 @@ const updateWeeklyStairs = (steps) => {
             "rgba(255, 159, 64, .8)",
             "rgba( 255, 0, 255, .8)",
           ],
-          borderWidth: 6,
+          borderWidth: 4,
         },
       ],
     },
@@ -262,4 +262,11 @@ const updateWeeklyStairs = (steps) => {
   });
 };
 
-export { updateHydrationChart, updateSleepChart, updateWeeklySteps, updateWeeklyStairs, updateWeeklyMinutes, updateSleepQualityChart };
+export {
+  updateHydrationChart,
+  updateSleepChart,
+  updateWeeklySteps,
+  updateWeeklyStairs,
+  updateWeeklyMinutes,
+  updateSleepQualityChart,
+};
