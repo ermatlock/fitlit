@@ -13,7 +13,8 @@
 }
 
 html,
-body {}
+body {
+}
 
 body {
   line-height: 1.5;
@@ -55,10 +56,12 @@ h6 {
 
 body,
 html {
-  background-image: linear-gradient(to top,
-      #070024 20%,
-      #32135a 64%,
-      #0c0132 100%);
+  background-image: linear-gradient(
+    to top,
+    #070024 20%,
+    #32135a 64%,
+    #0c0132 100%
+  );
   background-repeat: repeat;
   height: 150vh;
 }
@@ -122,7 +125,8 @@ ul {
 
 .card {
   display: flex;
-  width: 21vw;
+  width: 20%;
+  height: 50vh;
   border: 2px solid #ffffff82;
   border-radius: 28px;
   flex-direction: column;
@@ -131,7 +135,7 @@ ul {
 }
 
 .user-input {
-  width: 18VW;
+  width: 18vw;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -144,16 +148,16 @@ ul {
 
 .hydration-card {
   background-color: #ff4500;
-  ;
 }
 
 .expanded {
   display: flex;
   flex-direction: column;
-  width: 49%;
-  height: 45vh;
-  justify-content: space-evenly;
+  width: 34%;
+  height: 42vh;
+  justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .chart {
@@ -170,12 +174,10 @@ ul {
 
 .sleep-card {
   background-color: #aa32e2;
-  ;
 }
 
 .user-card {
   background-color: #d11f98;
-  ;
 }
 
 .user-text {
