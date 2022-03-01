@@ -46,7 +46,7 @@ To get a local copy up and running follow these simple steps.
    
 ## Local Server
 
-Go to the [local server repo](https://github.com/turingschool-examples/fitlit-api) and follow instructions to download the server locally.
+Go to the [local server repo](https://github.com/turingschool-examples/fitlit-api) and follow instructions to download the server locally. The website will not show any data without this step.
    
 ## Run Test
 
