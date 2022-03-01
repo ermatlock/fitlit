@@ -5,7 +5,7 @@ class Sleep {
     this.sleepDataAll = sleepData
   }
 
-  getAverageSleepHours(){
+  getAverageSleepHours() {
     let totalHours = this.sleepData.reduce((sum, currDay) => {
       sum += currDay.hoursSlept
       return sum
@@ -16,12 +16,12 @@ class Sleep {
   }
 
   getAverageSleepQuality() {
-    let totalQuality =  this.sleepData.reduce((sum, currDay) => {
+    let totalQuality = this.sleepData.reduce((sum, currDay) => {
       sum += currDay.sleepQuality
       return sum
     }, 0)
 
-    let average = totalQuality/ this.sleepData.length
+    let average = totalQuality / this.sleepData.length
     return average.toFixed(2)
   }
 
@@ -29,13 +29,13 @@ class Sleep {
     let lastDayIndex = this.sleepData.length - 1;
 
     return this.sleepData[lastDayIndex].hoursSlept;
-}
+  }
 
   getSleepQualityByDate() {
-  let lastDayIndex = this.sleepData.length - 1;
+    let lastDayIndex = this.sleepData.length - 1;
 
-  return this.sleepData[lastDayIndex].sleepQuality;
-}
+    return this.sleepData[lastDayIndex].sleepQuality;
+  }
 
   getWeeklyHoursSlept() {
     let lastDayIndex = this.sleepData.length - 7;
@@ -52,13 +52,13 @@ class Sleep {
   }
 
   getAvgSleepAllUsers() {
-      let totalQuality =  this.sleepDataAll.reduce((sum, currDay) => {
-        sum += currDay.sleepQuality
-        return sum
-      }, 0)
+    let totalQuality = this.sleepDataAll.reduce((sum, currDay) => {
+      sum += currDay.sleepQuality
+      return sum
+    }, 0)
 
-      let average = totalQuality/ this.sleepDataAll.length
-      return average.toFixed(2)
+    let average = totalQuality / this.sleepDataAll.length
+    return average.toFixed(2)
   }
 
 }
