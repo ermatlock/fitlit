@@ -44,7 +44,11 @@ To get a local copy up and running follow these simple steps.
    npm install
    ```
    
- ## Run Test
+## Local Server
+
+Go to the [local server repo](https://github.com/turingschool-examples/fitlit-api) and follow instructions to download the server locally.
+   
+## Run Test
 
 1. In your terminal, to run a test
    ```sh
