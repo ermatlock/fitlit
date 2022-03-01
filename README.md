@@ -39,14 +39,30 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone git@github.com:ermatlock/fitlit.git
    ```
+2. Next `cd` into that directory
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the server
+   ```sh
+   npm start
+   ```
+   
+## Local Server
+1. In your terminal, clone the repo
+   ```sh
+   git@github.com:turingschool-examples/fitlit-api.git
+   ```
 2. Install NPM packages
    ```sh
    npm install
    ```
-   
-## Local Server
+3. Start the server
+   ```sh
+   npm start
+   ```
 
-Go to the [local server repo](https://github.com/turingschool-examples/fitlit-api) and follow instructions to download the server locally. The website will not show any data without this step.
    
 ## Run Test
 
@@ -55,7 +71,7 @@ Go to the [local server repo](https://github.com/turingschool-examples/fitlit-ap
    npm test
    ```
 ## View Site
-1. In your terminal, to start the server
+1. In your terminal, to start the server.
    ```sh
    npm start
    ```
