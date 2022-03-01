@@ -68,17 +68,20 @@ html {
 
 /*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
-h1 {
+
+
+.large-font {
   font-size: 6vh;
 }
 
-h2 {
+.medium-font {
   font-size: 4vh;
 }
 
-h3 {
+.small-font {
   font-size: 2vh;
 }
+
 
 ul {
   padding: 0px 20px 0px 20px;
@@ -86,6 +89,8 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .main-container {
   display: flex;
