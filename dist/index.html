@@ -23,9 +23,9 @@
           </p>
         </div>
       </div>
-      <nav class="nav-wrapper">
-        <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
-      </nav>
+      <header class="nav-wrapper">
+        <p class="welcome-user" id="welcome">Welcome to FitLit</p>
+      </header>
       <section class="card-wrapper">
         <form tabindex="0" class="card user-input">
           <!-- <input id="userInputActivity" type="text" placeholder="Enter Your Activity Here" required /> -->
@@ -76,33 +76,33 @@
           </button>
         </form>
         <article tabindex="0" class="card activity-card">
-          <img class="card-image" alt="Activity Image" src="./images/run.svg" />
-          <h1 id="todaySteps"></h1>
-          <h3>STEPS</h3>
-          <h1 id="milesWalked"></h1>
-          <h3>MILES WALKED</h3>
-          <h1 id="minutesActive"></h1>
-          <h3>MINUTES ACTIVE</h3>
+          <img class="card-image" alt="Sneaker" src="./images/run.svg" />
+          <p class="large-font" id="todaySteps"></p>
+          <p class="small-font">STEPS</p>
+          <p class="large-font" id="milesWalked"></p>
+          <p class="small-font">MILES WALKED</p>
+          <p class="large-font" id="minutesActive"></p>
+          <p class="small-font">MINUTES ACTIVE</p>
         </article>
         <article tabindex="0" class="card hydration-card">
           <img
             class="card-image water-image"
-            alt="Water Image"
+            alt="Water Droplet"
             src="./images/droplet.png"
           />
 
-          <h1 id="dailyHydration"></h1>
-          <h3>OZ</h3>
+          <p class="large-font" id="dailyHydration"></p>
+          <p class="medium-font">OZ</p>
         </article>
         <article tabindex="0" class="card sleep-card">
-          <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
-          <h3>HOURS SLEEP</h3>
-          <h1 id="oneNightsHours"></h1>
-          <h3>SLEEP QUALITY</h3>
-          <h1 id="oneNightsQuality"></h1>
+          <img class="card-image" alt="Bed" src="./images/sleep.svg" />
+          <p class="small-font">HOURS SLEEP</p>
+          <p class="large-font" id="oneNightsHours"></p>
+          <p class="small-font">SLEEP QUALITY</p>
+          <p class="large-font" id="oneNightsQuality"></p>
         </article>
         <article tabindex="0" class="card user-card">
-          <img class="card-image" alt="User Image" src="./images/user.png" />
+          <img class="card-image" alt="Human Icon" src="./images/user.png" />
           <div class="user-text">
             <p id="userName">User Name</p>
             <p id="userAddress">Adress</p>
@@ -132,7 +132,7 @@
             <canvas id="sleepQualityChart"></canvas>
           </div>
 
-          <h3></h3>
+          <p></p>
           <div class="week" id=""></div>
         </article>
       </section>
@@ -157,7 +157,7 @@
             <canvas id="weekMinutes"></canvas>
           </div>
           <p id="allMinutesAvg">All Time User Average</p>
-          <h3></h3>
+          <p></p>
           <div class="week" id=""></div>
         </article>
       </section>
