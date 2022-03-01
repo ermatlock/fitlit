@@ -13,8 +13,7 @@
 }
 
 html,
-body {
-}
+body {}
 
 body {
   line-height: 1.5;
@@ -56,20 +55,16 @@ h6 {
 
 body,
 html {
-  background-image: linear-gradient(
-    to top,
-    #070024 20%,
-    #32135a 64%,
-    #0c0132 100%
-  );
+  background-image: linear-gradient(to top,
+      #070024 20%,
+      #32135a 64%,
+      #0c0132 100%);
   background-repeat: repeat;
   height: 150vh;
 }
 
 /*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
-
-
 .large-font {
   font-size: 6vh;
 }
@@ -82,15 +77,12 @@ html {
   font-size: 2vh;
 }
 
-
 ul {
   padding: 0px 20px 0px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .main-container {
   display: flex;
@@ -140,6 +132,10 @@ ul {
 
 .user-input {
   width: 18VW;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
 }
 
 .activity-card {
@@ -147,7 +143,8 @@ ul {
 }
 
 .hydration-card {
-  background-color: #ff4500;;
+  background-color: #ff4500;
+  ;
 }
 
 .expanded {
@@ -155,7 +152,7 @@ ul {
   flex-direction: column;
   width: 49%;
   height: 45vh;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -172,11 +169,13 @@ ul {
 }
 
 .sleep-card {
-  background-color: #aa32e2;;
+  background-color: #aa32e2;
+  ;
 }
 
 .user-card {
-  background-color: #d11f98;;
+  background-color: #d11f98;
+  ;
 }
 
 .user-text {
@@ -203,16 +202,24 @@ ul {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
