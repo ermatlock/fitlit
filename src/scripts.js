@@ -28,7 +28,7 @@ import {
   updateWeeklySteps,
   updateWeeklyStairs,
   updateWeeklyMinutes,
-  updateSleepQualityChart
+  updateSleepQualityChart,
 } from "./ourCharts";
 import domUpdates from "./domUpdates";
 
@@ -107,8 +107,6 @@ const promiseAll = () => {
     const apiActivityData = data[2].activityData;
     const apiHydrationData = data[3].hydrationData;
     const id = getRandomIndex(apiUserData);
-    console.log("ID>>>>", id);
-    console.log("USER>>>>>>", currentUser);
     instantiateUserRepository(apiUserData);
     instantiateUser(id);
     domUpdates.greetUser(currentUser);
@@ -126,7 +124,6 @@ const promiseAll = () => {
 };
 
 const submitInfo = () => {
-  console.log("ISITWORKING??");
   postHydration(
     currentUser.id,
     "2022/02/25",
@@ -145,7 +142,6 @@ const submitInfo = () => {
     parseInt(userInputMinutesActive.value),
     parseInt(userInputFlightsOfStairs.value)
   );
-
 };
 
 const loadPage = () => {
