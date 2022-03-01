@@ -15,6 +15,7 @@ Fitlit is a web application that displays a dashboard of user information from s
 - CSS
 - Mocha/Chai
 - Webpack
+- Charts.js
 
 # Getting Started
 To get a local copy up and running follow these simple steps.
