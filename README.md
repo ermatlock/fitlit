@@ -1,20 +1,6 @@
 # FitLit 
 
-Fitlit is a web application that displays a dashboard of user information from steps to sleep and hydration. The application calculates and displays a users:
-
-
-### Sleep
-
-- most recently recorded sleep
-- most recently recorded sleep quality
-- every nights sleep for a week
-- every nights sleep quality for a week
-- average hours slept of all users
-- average sleep quality of all users
-
-### Hydration
-- num ounces drank most recently 
-- num ounces consumed for each day over the last week
+Fitlit is a web application that displays a dashboard of user information from steps, sleeps, hydration, miles and minutes active. The user has the ability to input this data themselves.
 
 <img width="1500" alt="Screen Shot 2022-02-14 at 7 02 29 PM" src="https://user-images.githubusercontent.com/93098905/153967660-cbd22873-5cff-40e2-9659-72bf662ac60b.png">
 
