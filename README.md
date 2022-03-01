@@ -47,7 +47,7 @@ To get a local copy up and running follow these simple steps.
 4. Start the server
    ```sh
    npm start
-   ```
+   ``` 
    
 ## Local Server
 1. In your terminal, clone the repo
@@ -62,7 +62,9 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm start
    ```
-
+   
+## View Site
+After starting both servers, project will run at http://localhost:8080/  
    
 ## Run Test
 
@@ -70,12 +72,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm test
    ```
-## View Site
-1. In your terminal, to start the server.
-   ```sh
-   npm start
-   ```
-2. Project will run at http://localhost:8080/   
+
 
 # Code Architecture 
 If you want to know more about our code architecture, [click here](https://gist.github.com/Ekaiman/f0c6022e295921a810e7531a4d38f9b0).
