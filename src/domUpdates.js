@@ -61,7 +61,7 @@ let domUpdates = {
     updateWeeklySteps(weeklySteps)
     updateWeeklyMinutes(weeklyMinutes)
     updateWeeklyStairs(weeklyStairs)
-    allStepAvg.innerText = `You did ${currentActivity.getLastRecordedSteps()} steps. Most people averaged ${currentActivity.lastDayAllAvg().steps} steps`
+    allStepAvg.innerText = `You completed ${currentActivity.getLastRecordedSteps()} steps. Most people averaged ${currentActivity.lastDayAllAvg().steps} steps`
     allStairsAvg.innerText = `You were active for ${currentActivity.getMinutesActive()} minutes. Most people were active for ${currentActivity.lastDayAllAvg().minutes} minutes`
     allMinutesAvg.innerText = `You climbed ${currentActivity.getLastRecordedFlights()} flights of stairs. Most people averaged ${currentActivity.lastDayAllAvg().flights} flights`
 
