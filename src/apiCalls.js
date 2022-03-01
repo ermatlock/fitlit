@@ -1,7 +1,7 @@
 import domUpdates from "./domUpdates";
 
 // //FETCH calls
-//
+
 const fetchUserData = () => {
   return fetch("http://localhost:3001/api/v1/users")
     .then((response) => response.json())
@@ -111,7 +111,3 @@ export {
   postSleep,
   postActivity,
 };
-
-// export defualt {fetchUserData, fetchSleepData, fetchActivityData, fetchHydrationData};
-
-//POST request

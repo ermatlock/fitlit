@@ -13,8 +13,7 @@
 }
 
 html,
-body {
-}
+body {}
 
 body {
   line-height: 1.5;
@@ -56,27 +55,25 @@ h6 {
 
 body,
 html {
-  background-image: linear-gradient(
-    to top,
-    #070024 20%,
-    #32135a 64%,
-    #0c0132 100%
-  );
-  background-repeat: no-repeat;
+  background-image: linear-gradient(to top,
+      #070024 20%,
+      #32135a 64%,
+      #0c0132 100%);
+  background-repeat: repeat;
   height: 150vh;
 }
 
 /*~~~~~~~~~~~~~~~~End Reset~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~Layout~~~~~~~~~~~~~~~~~~~ */
-h1 {
+.large-font {
   font-size: 6vh;
 }
 
-h2 {
+.medium-font {
   font-size: 4vh;
 }
 
-h3 {
+.small-font {
   font-size: 2vh;
 }
 
@@ -133,12 +130,21 @@ ul {
   box-shadow: 1px 1px 80px 1px #81abadab;
 }
 
+.user-input {
+  width: 18VW;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
 .activity-card {
-  background-color: #71c4ff;
+  background-color: #0a76db;
 }
 
 .hydration-card {
-  background-color: #ff6d37;
+  background-color: #ff4500;
+  ;
 }
 
 .expanded {
@@ -146,7 +152,7 @@ ul {
   flex-direction: column;
   width: 49%;
   height: 45vh;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -163,14 +169,18 @@ ul {
 }
 
 .sleep-card {
-  background-color: blueviolet;
+  background-color: #aa32e2;
+  ;
 }
 
 .user-card {
-  background-color: #e91e63;
+  background-color: #d11f98;
+  ;
 }
 
 .user-text {
+  font-size: 2vh;
+  overflow-wrap: break-word;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -192,16 +202,24 @@ ul {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content/Box */

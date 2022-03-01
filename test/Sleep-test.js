@@ -155,7 +155,7 @@ describe('sleep', () => {
     expect(Sleep).to.be.a("function");
   });
 
-  it("should be an instance of hydration", () => {
+  it("should be an instance of sleep", () => {
     expect(sleep1).to.be.an.instanceOf(Sleep);
   });
 
@@ -163,7 +163,7 @@ describe('sleep', () => {
     expect(sleep1.userId).to.equal(1);
   });
 
-  it("should accept Hydration API data", () => {
+  it("should accept Sleep API data", () => {
     let userOneData = sleepData.filter((user) => user.userID === 1);
     expect(sleep1.sleepData).to.eql(userOneData);
   });

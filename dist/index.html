@@ -1,163 +1,123 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="../src/css/styles.css" />
-    <title>FitLit Activity Tracker</title>
-  </head>
+<html lang="en">
 
-  <body>
-    <main class="main-container">
-      <!-- <button id="myBtn">Open Modal</button> -->
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="errorMessage">
-            Sorry, we are having trouble posting your data
-          </p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../src/css/styles.css" />
+  <title>FitLit Activity Tracker</title>
+</head>
+
+<body>
+  <main class="main-container">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="errorMessage">
+          Sorry, we are having trouble posting your data
+        </p>
       </div>
-      <nav class="nav-wrapper">
-        <h1 class="welcome-user" id="welcome">Welcome to FitLit</h1>
-      </nav>
-      <section class="card-wrapper">
-        <form class="card user-input">
-          <!-- <input id="userInputActivity" type="text" placeholder="Enter Your Activity Here" required /> -->
-          <input
-            id="userInputHydration"
-            type="number"
-            placeholder="Enter Your Hydration In Ounces"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <input
-            id="userInputSleepHours"
-            type="number"
-            placeholder="Enter Your Sleep Hours"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <input
-            id="userInputSleepQuality"
-            type="number"
-            placeholder="Enter Your Sleep Quality"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <input
-            id="userInputNumSteps"
-            type="number"
-            placeholder="Enter Your Steps"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <input
-            id="userInputMinutesActive"
-            type="number"
-            placeholder="Enter Your Minutes Active"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <input
-            id="userInputFlightsOfStairs"
-            type="number"
-            placeholder="Enter Your Flights of Stairs"
-            required
-            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
-          />
-          <button id="userInputButton" type="button" name="button">
-            SUBMIT
-          </button>
-        </form>
-        <article class="card activity-card">
-          <img class="card-image" alt="Activity Image" src="./images/run.svg" />
-          <h1 id="todaySteps"></h1>
-          <h3>STEPS</h3>
-          <h1 id="milesWalked"></h1>
-          <h3>MILES WALKED</h3>
-        </article>
-        <article class="card hydration-card">
-          <img
-            class="card-image water-image"
-            alt="Water Image"
-            src="./images/droplet.png"
-          />
+    </div>
+    <header class="nav-wrapper">
+      <p class="welcome-user" id="welcome">Welcome to FitLit</p>
+    </header>
+    <section class="card-wrapper">
+      <form tabindex="0" class="card user-input">
+        <input id="userInputHydration" type="number" placeholder="Enter Your Hydration In Ounces" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <input id="userInputSleepHours" type="number" placeholder="Enter Your Sleep Hours" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <input id="userInputSleepQuality" type="number" placeholder="Enter Your Sleep Quality" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <input id="userInputNumSteps" type="number" placeholder="Enter Your Steps" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <input id="userInputMinutesActive" type="number" placeholder="Enter Your Minutes Active" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <input id="userInputFlightsOfStairs" type="number" placeholder="Enter Your Flights of Stairs" required onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187" />
+        <button id="userInputButton" type="button" name="button">
+          SUBMIT
+        </button>
+      </form>
+      <article tabindex="0" class="card activity-card">
+        <img class="card-image" alt="Sneaker" src="./images/run.svg" />
+        <p class="large-font" id="todaySteps"></p>
+        <p class="small-font">STEPS</p>
+        <p class="large-font" id="milesWalked"></p>
+        <p class="small-font">MILES WALKED</p>
+        <p class="large-font" id="minutesActive"></p>
+        <p class="small-font">MINUTES ACTIVE</p>
+      </article>
+      <article tabindex="0" class="card hydration-card">
+        <img class="card-image water-image" alt="Water Droplet" src="./images/droplet.png" />
 
-          <h1 id="dailyHydration"></h1>
-          <h3>OZ</h3>
-        </article>
-        <article class="card sleep-card">
-          <img class="card-image" alt="Sleep Image" src="./images/sleep.svg" />
-          <h3>HOURS SLEEP</h3>
-          <h1 id="oneNightsHours"></h1>
-          <h3>SLEEP QUALITY</h3>
-          <h1 id="oneNightsQuality"></h1>
-        </article>
-        <article class="card user-card">
-          <img class="card-image" alt="User Image" src="./images/user.png" />
-          <div class="user-text">
-            <p id="userName">User Name</p>
-            <p id="userAddress">Adress</p>
-            <p id="userEmail">Email Address</p>
-            <p id="userStrideLength">Stride Length</p>
-            <p id="compareStepGoal"></p>
-          </div>
-        </article>
-      </section>
-      <section class="graph-wrapper">
-        <article class="card expanded">
-          <div class="chart">
-            <canvas id="hydrationChart"></canvas>
-          </div>
+        <p class="large-font" id="dailyHydration"></p>
+        <p class="medium-font">OZ</p>
+      </article>
+      <article tabindex="0" class="card sleep-card">
+        <img class="card-image" alt="Bed" src="./images/sleep.svg" />
+        <p class="small-font">HOURS SLEEP</p>
+        <p class="large-font" id="oneNightsHours"></p>
+        <p class="small-font">SLEEP QUALITY</p>
+        <p class="large-font" id="oneNightsQuality"></p>
+      </article>
+      <article tabindex="0" class="card user-card">
+        <img class="card-image" alt="Human Icon" src="./images/user.png" />
+        <div class="user-text">
+          <p id="userName">User Name</p>
+          <p id="userAddress">Adress</p>
+          <p id="userEmail">Email Address</p>
+          <p id="userStrideLength">Stride Length</p>
+          <p id="compareStepGoal"></p>
+        </div>
+      </article>
+    </section>
+    <section class="graph-wrapper">
+      <article tabindex="0" class="card expanded">
+        <div class="chart">
+          <canvas id="hydrationChart"></canvas>
+        </div>
 
-        </article>
-        <article class="card expanded">
+      </article>
+      <article tabindex="0" class="card expanded">
 
-          <div class="chart">
-            <canvas id="sleepChart"></canvas>
-          </div>
+        <div class="chart">
+          <canvas id="sleepChart"></canvas>
+        </div>
 
-          <p id="allTimeAvg">All Time User Average</p>
-        </article>
-        <article class="card expanded">
-          <div class="chart">
-            <canvas id="sleepQualityChart"></canvas>
-          </div>
+        <p id="allTimeAvg">All Time User Average</p>
+      </article>
+      <article tabindex="0" class="card expanded">
+        <div class="chart">
+          <canvas id="sleepQualityChart"></canvas>
+        </div>
 
-          <h3></h3>
-          <div class="week" id=""></div>
-        </article>
-      </section>
-      <section class="graph-wrapper-2">
-        <article class="card expanded">
-          <div class="chart">
-            <canvas id="weekSteps"></canvas>
-          </div>
+        <p></p>
+        <div class="week" id=""></div>
+      </article>
+    </section>
+    <section class="graph-wrapper-2">
+      <article tabindex="0" class="card expanded">
+        <div class="chart">
+          <canvas id="weekSteps"></canvas>
+        </div>
+        <p id="allStepAvg">All Time User Average</p>
 
-        </article>
-        <article class="card expanded">
+      </article>
+      <article tabindex="0" class="card expanded">
 
-          <div class="chart">
-            <canvas id="weekStairs"></canvas>
-          </div>
+        <div class="chart">
+          <canvas id="weekStairs"></canvas>
+        </div>
 
-          <p id="allTimeAvg">All Time User Average</p>
-        </article>
-        <article class="card expanded">
-          <div class="chart">
-            <canvas id="weekMinutes"></canvas>
-          </div>
+        <p id="allStairsAvg">All Time User Average</p>
+      </article>
+      <article tabindex="0" class="card expanded">
+        <div class="chart">
+          <canvas id="weekMinutes"></canvas>
+        </div>
+        <p id="allMinutesAvg">All Time User Average</p>
+        <p></p>
+        <div class="week" id=""></div>
+      </article>
+    </section>
+  </main>
+  <script src="bundle.js"></script>
+</body>
 
-          <h3></h3>
-          <div class="week" id=""></div>
-        </article>
-      </section>
-    </main>
-    <script src="bundle.js"></script>
-  </body>
 </html>

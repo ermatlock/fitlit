@@ -14,6 +14,11 @@ class Activity {
     return this.activityData[lastDayIndex].numSteps;
   }
 
+  getLastRecordedFlights() {
+    let lastDayIndex = this.activityData.length - 1;
+    return this.activityData[lastDayIndex].flightsOfStairs;
+  }
+
   calculateMilesWalked(userClass) {
     let miles = (userClass.strideLength * this.getLastRecordedSteps()) / 5280;
     return miles.toFixed(2);
