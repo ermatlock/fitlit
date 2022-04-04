@@ -2,7 +2,7 @@
 
 Fitlit is a web application that displays a dashboard of user information from steps, sleeps, hydration, miles and minutes active. Weekly data in coveniently displayed on charts. The user has the ability to input this data themselves.
 
-![Gif 1](http://g.recordit.co/CR3HlWpf4t.gif)
+![Gif 1](http://g.recordit.co/vfFvdwEx7a.gif)
 
 # Contributors
 - [Emily Corcoran](https://github.com/Emily-Cathleen)
