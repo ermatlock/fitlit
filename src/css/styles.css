@@ -80,11 +80,6 @@ html {
   font-size: 2vh;
 }
 
-input {
-  font-size: small;
-  width: 74%;
-}
-
 ul {
   padding: 0px 20px 0px 20px;
   display: flex;
