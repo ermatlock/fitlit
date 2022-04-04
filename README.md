@@ -1,8 +1,8 @@
 # FitLit 
 
-This is a paired project using React to build an application that allows the user to view all movies, search movie by title, and filter movies based on different categories. The user is also able to click on a see more details button to view the movie's tagline, overview, rating, release date, genres, and runtime if available from the api data available.
+Fitlit is a web application that displays a dashboard of user information from steps, sleeps, hydration, miles and minutes active. Weekly data in coveniently displayed on charts. The user has the ability to input this data themselves.
 
-![Gif 1](http://g.recordit.co/CR3HlWpf4t.gif)
+![Gif 1](http://g.recordit.co/vfFvdwEx7a.gif)
 
 # Contributors
 - [Emily Corcoran](https://github.com/Emily-Cathleen)
